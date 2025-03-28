@@ -343,7 +343,7 @@
                     <a href="mailto:surabayahomeyguesthouse@gmail.com" class="action-button">📩</a>
                 </div>
                 
-                <a href="#menu" class="get-started-btn" id="get-started" onclick="showMenu()">GET STARTED</a>
+                <button class="get-started-btn" id="get-started">GET STARTED</button>
             </div>
         </div>
         
@@ -361,76 +361,306 @@
             </div>
             
             <div class="menu-grid">
-                <a href="#checkin" class="menu-item" data-page="checkin-info">
+                <div class="menu-item" data-page="checkin-info">
                     <div class="menu-icon">🔑</div>
                     <div class="menu-label">Check-in Instructions</div>
                     <div class="menu-label-id">Petunjuk Check-in</div>
-                </a>
-                <a href="#home" class="menu-item" data-page="about-home">
+                </div>
+                <div class="menu-item" data-page="about-home">
                     <div class="menu-icon">🏠</div>
                     <div class="menu-label">About the Home</div>
                     <div class="menu-label-id">Tentang Penginapan</div>
-                </a>
-                <a href="#rules" class="menu-item" data-page="house-rules">
+                </div>
+                <div class="menu-item" data-page="house-rules">
                     <div class="menu-icon">📋</div>
                     <div class="menu-label">House Rules</div>
                     <div class="menu-label-id">Peraturan Rumah</div>
-                </a>
-                <a href="#activities" class="menu-item" data-page="activities-guide">
+                </div>
+                <div class="menu-item" data-page="activities-guide">
                     <div class="menu-icon">🏙️</div>
                     <div class="menu-label">Activities Guide</div>
                     <div class="menu-label-id">Panduan Aktivitas</div>
-                </a>
-                <a href="#food" class="menu-item" data-page="food-guide">
+                </div>
+                <div class="menu-item" data-page="food-guide">
                     <div class="menu-icon">🍲</div>
                     <div class="menu-label">Culinary Guide</div>
                     <div class="menu-label-id">Panduan Kuliner</div>
-                </a>
-                <a href="#checkout" class="menu-item" data-page="checkout-info">
+                </div>
+                <div class="menu-item" data-page="checkout-info">
                     <div class="menu-icon">🔄</div>
                     <div class="menu-label">Check-out Instructions</div>
                     <div class="menu-label-id">Petunjuk Check-out</div>
-                </a>
+                </div>
             </div>
         </div>
         
-        <!-- Rest of the content remains the same as in the original HTML -->
-        <!-- ... (check-in, about home, house rules, activities, food guide pages) ... -->
+        <!-- Check-in Information Page -->
+        <div class="content-page" id="checkin-info">
+            <div class="back-button">← Back to Menu</div>
+            <h2 class="page-title">Check-in Instructions</h2>
+            <h3 class="page-title-id">Petunjuk Check-in</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Check-in Time</h3>
+                <h4 class="card-title-id">Waktu Check-in</h4>
+                <p>Check-in time is from 2:00 PM to 11:00 PM. Our Receptionist will greet you in the property.</p>
+                <p style="font-style: italic; margin-top: 8px;">Waktu check-in adalah dari jam 14:00 hingga 23:00. Resepsionis kami akan menyambut Anda di properti.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Getting Here</h3>
+                <h4 class="card-title-id">Cara Menuju Lokasi</h4>
+                <p>From Juanda International Airport:</p>
+                <ul>
+                    <li>By car: 40 minutes drive</li>
+                    <li>By taxi/Uber: Approximately Rp150.000</li>
+                </ul>
+                
+                <p style="font-style: italic; margin-top: 8px;">Dari Bandara Internasional Juanda:</p>
+                <ul style="font-style: italic;">
+                    <li>Dengan mobil: 40 menit perjalanan</li>
+                    <li>Dengan taksi/Uber: Sekitar Rp150.000</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Parking Information</h3>
+                <h4 class="card-title-id">Informasi Parkir</h4>
+                <p>Free on-site parking is available.</p>
+                <p style="font-style: italic; margin-top: 8px;">Tersedia parkir gratis di lokasi.</p>
+            </div>
+        </div>
+        
+        <!-- About the Home Page -->
+        <div class="content-page" id="about-home">
+            <div class="back-button">← Back to Menu</div>
+            <h2 class="page-title">About the Home</h2>
+            <h3 class="page-title-id">Tentang Penginapan</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">WiFi</h3>
+                <h4 class="card-title-id">WiFi</h4>
+                <p>Network: Surabaya Homey</p>
+                <p>Password: greenhomey11</p>
+                
+                <p style="font-style: italic; margin-top: 8px;">Jaringan: Surabaya Homey</p>
+                <p style="font-style: italic;">Kata Sandi: greenhomey11</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Air Conditioning</h3>
+                <h4 class="card-title-id">Pendingin Ruangan</h4>
+                <p>Remote controls for the AC units are located on the wall hanging table lower the TV (meja gantung dibawah TV).</p>
+                <p style="font-style: italic; margin-top: 8px;">Remote control untuk unit AC terletak di meja gantung di bawah TV.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Mineral Water</h3>
+                <h4 class="card-title-id">Air Mineral</h4>
+                <p>Free Flow Mineral Water that you can find in the kitchen.</p>
+                <p style="font-style: italic; margin-top: 8px;">Air mineral gratis tersedia di dapur.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Kitchen</h3>
+                <h4 class="card-title-id">Dapur</h4>
+                <p>The kitchen is fully equipped with a refrigerator, stove, you can make simple food such as Noodles.</p>
+                <p style="font-style: italic; margin-top: 8px;">Dapur dilengkapi dengan kulkas, kompor, Anda dapat membuat makanan sederhana seperti Mie.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">TV & Entertainment</h3>
+                <h4 class="card-title-id">TV & Hiburan</h4>
+                <p>Smart TV with Netflix and YouTube access. Please use your own account to log in and remember to log out before departure.</p>
+                <p style="font-style: italic; margin-top: 8px;">Smart TV dengan akses Netflix dan YouTube. Silakan gunakan akun Anda sendiri untuk masuk dan ingat untuk keluar sebelum check-out.</p>
+            </div>
+        </div>
+        
+        <!-- House Rules Page -->
+        <div class="content-page" id="house-rules">
+            <div class="back-button">← Back to Menu</div>
+            <h2 class="page-title">House Rules</h2>
+            <h3 class="page-title-id">Peraturan Rumah</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Important Rules</h3>
+                <h4 class="card-title-id">Peraturan Penting</h4>
+                <ul>
+                    <li>No smoking inside the Room / property - Smoking Room Only in Balcony</li>
+                    <li>No parties or events</li>
+                    <li>Quiet hours from 10:00 PM to 7:00 AM</li>
+                    <li>Please conserve water (we are supporting sustainability)</li>
+                </ul>
+                
+                <p style="font-style: italic; margin-top: 16px;">Peraturan Penting:</p>
+                <ul style="font-style: italic;">
+                    <li>Dilarang merokok di dalam Kamar / properti - Area merokok hanya di Balkon</li>
+                    <li>Dilarang mengadakan pesta atau acara</li>
+                    <li>Jam tenang dari 22:00 hingga 07:00</li>
+                    <li>Harap hemat air (kami mendukung keberlanjutan)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Activities Guide Page -->
+        <div class="content-page" id="activities-guide">
+            <div class="back-button">← Back to Menu</div>
+            <h2 class="page-title">Surabaya Activities Guide</h2>
+            <h3 class="page-title-id">Panduan Aktivitas Surabaya</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Popular Attractions</h3>
+                <h4 class="card-title-id">Tempat Wisata Populer</h4>
+                <p><strong>Tugu Pahlawan (Heroes Monument)</strong> - 15 min drive</p>
+                <p>The 41-meter tall monument commemorates the Battle of Surabaya in 1945. Adjacent museum provides historical insight.</p>
+                
+                <p><strong>Submarine Monument (Monumen Kapal Selam)</strong> - 15 min drive</p>
+                <p>Explore inside a real submarine that served in the Indonesian Navy from 1962 to 1990.</p>
+                
+                <p style="font-style: italic; margin-top: 16px;"><strong>Tugu Pahlawan</strong> - 15 menit berkendara</p>
+                <p style="font-style: italic;">Monumen setinggi 41 meter yang memperingati Pertempuran Surabaya tahun 1945. Museum di sebelahnya memberikan wawasan sejarah.</p>
+                
+                <p style="font-style: italic;"><strong>Monumen Kapal Selam</strong> - 15 menit berkendara</p>
+                <p style="font-style: italic;">Jelajahi bagian dalam kapal selam asli yang bertugas di TNI AL dari tahun 1962 hingga 1990.</p>
+            </div>
+        </div>
+        
+        <!-- Food Guide Page -->
+        <div class="content-page" id="food-guide">
+            <div class="back-button">← Back to Menu</div>
+            <h2 class="page-title">Surabaya Culinary Guide</h2>
+            <h3 class="page-title-id">Panduan Kuliner Surabaya</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Must-Try Local Dishes</h3>
+                <h4 class="card-title-id">Hidangan Lokal yang Wajib Dicoba</h4>
+                <p><strong>Rawon</strong> - Traditional black beef soup with unique nutmeg flavor</p>
+                <p><strong>Rujak Cingur</strong> - Mixed vegetables with beef nose, tofu, and petis sauce</p>
+                <p><strong>Lontong Balap</strong> - Rice cake with bean sprouts, tofu, and sweet soy sauce</p>
+                <p><strong>Semanggi Surabaya</strong> - Clover-shaped vegetable with sweet peanut sauce</p>
+                <p><strong>Tahu Tek</strong> - Fried tofu with rice cake, bean sprouts, and peanut sauce</p>
+                
+                <p style="font-style: italic; margin-top: 16px;"><strong>Rawon</strong> - Sup daging sapi hitam tradisional dengan rasa kluwek yang unik</p>
+                <p style="font-style: italic;"><strong>Rujak Cingur</strong> - Sayuran campur dengan hidung sapi, tahu, dan saus petis</p>
+                <p style="font-style: italic;"><strong>Lontong Balap</strong> - Lontong dengan taoge, tahu, dan kecap manis</p>
+                <p style="font-style: italic;"><strong>Semanggi Surabaya</strong> - Sayuran berbentuk semanggi dengan saus kacang manis</p>
+                <p style="font-style: italic;"><strong>Tahu Tek</strong> - Tahu goreng dengan lontong, taoge, dan saus kacang</p>
+            </div>
+        </div>
+        
+        <!-- Checkout Information Page -->
+        <div class="content-page" id="checkout-info">
+            <div class="back-button">← Back to Menu</div>
+            <h2 class="page-title">Check-out Instructions</h2>
+            <h3 class="page-title-id">Petunjuk Check-out</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Check-out Time</h3>
+                <h4 class="card-title-id">Waktu Check-out</h4>
+                <p>Check-out time is 12:00 AM.</p>
+                <p>Please leave the keys in the door.</p>
+                <p>Make sure all windows and doors are locked before departure.</p>
+                
+                <p style="font-style: italic; margin-top: 8px;">Waktu check-out adalah jam 12:00.</p>
+                <p style="font-style: italic;">Harap tinggalkan kunci di pintu.</p>
+                <p style="font-style: italic;">Pastikan semua jendela dan pintu terkunci sebelum keberangkatan.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Trash & Recycling</h3>
+                <h4 class="card-title-id">Sampah & Daur Ulang</h4>
+                <p>Please take all trash to the bins located at the side of the house.</p>
+                <p>Recycling (glass, paper, plastic) can be placed in the blue bins.</p>
+                
+                <p style="font-style: italic; margin-top: 8px;">Harap buang semua sampah ke tempat sampah yang terletak di samping rumah.</p>
+                <p style="font-style: italic;">Daur ulang (kaca, kertas, plastik) dapat ditempatkan di tempat sampah biru.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Reviews & Feedback</h3>
+                <h4 class="card-title-id">Ulasan & Masukan</h4>
+                <p>We hope you enjoyed your stay! We would greatly appreciate if you could leave a review.</p>
+                <p>Any feedback to help us improve is always welcome.</p>
+                <p>We hope to welcome you back soon!</p>
+                
+                <p style="font-style: italic; margin-top: 8px;">Kami harap Anda menikmati menginap! Kami sangat menghargai jika Anda bisa meninggalkan ulasan.</p>
+                <p style="font-style: italic;">Setiap masukan untuk membantu kami meningkatkan layanan selalu diterima dengan senang hati.</p>
+                <p style="font-style: italic;">Kami berharap dapat menyambut Anda kembali segera!</p>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="nav-item active-nav" id="home-nav">
+                <div class="nav-icon">🏠</div>
+                <div>HOME</div>
+            </div>
+            <div class="nav-item" id="info-nav">
+                <div class="nav-icon">ℹ️</div>
+                <div>INFO</div>
+            </div>
+            <div class="nav-item" id="map-nav">
+                <div class="nav-icon">🗺️</div>
+                <div>MAP</div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Function to show menu and hide welcome screen
-        function showMenu() {
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('menu').style.display = 'block';
-        }
-
-        // Add event listeners to menu items to show/hide pages
-        document.querySelectorAll('.menu-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Hide all content pages
-                document.querySelectorAll('.content-page').forEach(page => {
-                    page.style.display = 'none';
-                });
-                
-                // Show the selected page
-                const pageId = this.getAttribute('data-page');
-                document.getElementById(pageId).style.display = 'block';
+        // Wait for DOM content to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const menuSection = document.getElementById('menu');
+            const getStartedBtn = document.getElementById('get-started');
+            const menuItems = document.querySelectorAll('.menu-item');
+            const backButtons = document.querySelectorAll('.back-button');
+            const contentPages = document.querySelectorAll('.content-page');
+            
+            // Get Started button click event
+            getStartedBtn.addEventListener('click', function() {
+                welcomeScreen.style.display = 'none';
+                menuSection.style.display = 'block';
             });
-        });
-
-        // Add event listeners to back buttons
-        document.querySelectorAll('.back-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Hide all content pages
-                document.querySelectorAll('.content-page').forEach(page => {
+            
+            // Menu item click events
+            menuItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    const pageId = this.getAttribute('data-page');
+                    menuSection.style.display = 'none';
+                    
+                    // Hide all content pages
+                    contentPages.forEach(function(page) {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Show selected page
+                    document.getElementById(pageId).style.display = 'block';
+                });
+            });
+            
+            // Back button click events
+            backButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Hide all content pages
+                    contentPages.forEach(function(page) {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Show menu
+                    menuSection.style.display = 'block';
+                });
+            });
+            
+            // Navigation bar functionality
+            document.getElementById('home-nav').addEventListener('click', function() {
+                contentPages.forEach(function(page) {
                     page.style.display = 'none';
                 });
                 
-                // Show menu
-                document.getElementById('menu').style.display = 'block';
+                if (menuSection.style.display === 'none') {
+                    menuSection.style.display = 'block';
+                }
             });
         });
     </script>
