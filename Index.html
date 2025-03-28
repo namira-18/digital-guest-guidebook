@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to [Your Property Name]</title>
+    <title>Welcome to Beach Retreat</title>
     <style>
         :root {
             --primary-color: #3DD1C9;
@@ -36,7 +36,7 @@
         .welcome-screen {
             position: relative;
             height: 100vh;
-            background-image: url('/api/placeholder/500/700');
+            background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJlYWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -287,7 +287,7 @@
         <div class="welcome-screen" id="welcome-screen">
             <div class="welcome-overlay"></div>
             <div class="welcome-content">
-                <img src="/api/placeholder/80/80" alt="Host" class="profile-img">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Host" class="profile-img">
                 <h1 class="welcome-title">Welcome to Cape Town</h1>
                 <h2 class="property-name">Beach Retreat</h2>
                 <p class="property-address">6 Example Close, Kommetjie, Western Cape 7576 ZA</p>
@@ -407,7 +407,167 @@
             </div>
         </div>
         
-        <!-- Other content pages would follow the same pattern -->
+        <!-- Safety Information Page -->
+        <div class="content-page" id="safety-info">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">Safety Information & Rules</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Emergency Contacts</h3>
+                <p>Emergency Services: 10111</p>
+                <p>Ambulance: 10177</p>
+                <p>Property Manager: +27 82 555 1234</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Fire Safety</h3>
+                <p>Fire extinguisher is located in the kitchen under the sink.</p>
+                <p>Smoke detectors are installed in all bedrooms and common areas.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">House Rules</h3>
+                <ul>
+                    <li>No smoking inside the property</li>
+                    <li>No parties or events</li>
+                    <li>Quiet hours from 10:00 PM to 8:00 AM</li>
+                    <li>Please conserve water (Cape Town is water-conscious)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Area Information Page -->
+        <div class="content-page" id="area-info">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">Practical Area Information</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Nearby Services</h3>
+                <p><strong>Grocery Store:</strong> Pick n Pay (2 km) - Open 8:00 AM to 8:00 PM</p>
+                <p><strong>Pharmacy:</strong> Clicks Pharmacy (2.5 km) - Open 9:00 AM to 7:00 PM</p>
+                <p><strong>ATM:</strong> Next to Pick n Pay</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Transportation</h3>
+                <p><strong>Uber:</strong> Available in the area</p>
+                <p><strong>Local Taxi:</strong> Cape Town Cabs +27 21 555 5555</p>
+                <p><strong>Car Rental:</strong> We recommend Around About Cars</p>
+            </div>
+        </div>
+        
+        <!-- Activities Guide Page -->
+        <div class="content-page" id="activities">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">Activities Guide</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Beach Activities</h3>
+                <p>Kommetjie Beach (5 min walk): Swimming, surfing, sunbathing</p>
+                <p>Long Beach (10 min walk): Surfing, long walks, dog-friendly</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Hiking</h3>
+                <p>Chapman's Peak Drive (15 min drive): Spectacular coastal views</p>
+                <p>Cape Point Nature Reserve (30 min drive): Diverse trails with wildlife</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Family Activities</h3>
+                <p>World of Birds (20 min drive): Africa's largest bird park</p>
+                <p>Two Oceans Aquarium (45 min drive): Marine exhibits and touch pools</p>
+            </div>
+        </div>
+        
+        <!-- Food & Drink Guide Page -->
+        <div class="content-page" id="food-guide">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">Food & Drink Guide</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Local Restaurants</h3>
+                <p><strong>The Lighthouse Café:</strong> Breakfast and lunch spot (5 min walk)</p>
+                <p><strong>Blue Water Café:</strong> Seafood with ocean views (10 min drive)</p>
+                <p><strong>Fisherman's Restaurant:</strong> Fresh catch of the day (15 min drive)</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Takeaway Options</h3>
+                <p><strong>The Pickled Fish:</strong> Fish & chips (5 min drive)</p>
+                <p><strong>Cape Pizza:</strong> Delivery available (10 min drive)</p>
+            </div>
+        </div>
+        
+        <!-- Wine Regions Guide Page -->
+        <div class="content-page" id="wine-guide">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">Wine Regions Guide</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Constantia Wine Route</h3>
+                <p>South Africa's oldest wine region (30 min drive)</p>
+                <p>Recommended estates: Groot Constantia, Klein Constantia, Buitenverwachting</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Stellenbosch Wine Route</h3>
+                <p>Famous university town with historic estates (1 hour drive)</p>
+                <p>Recommended estates: Spier, Tokara, Delaire Graff</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Wine Tours</h3>
+                <p>Vineyard Ventures: Private wine tours with pickup from accommodation</p>
+                <p>Contact: +27 83 123 4567</p>
+            </div>
+        </div>
+        
+        <!-- Cape Town Guide Page -->
+        <div class="content-page" id="cape-town">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">Visiting Cape Town</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Top Attractions</h3>
+                <p><strong>Table Mountain:</strong> Cable car or hiking (45 min drive)</p>
+                <p><strong>V&A Waterfront:</strong> Shopping and dining (45 min drive)</p>
+                <p><strong>Kirstenbosch Gardens:</strong> Botanical gardens (40 min drive)</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Cultural Experiences</h3>
+                <p><strong>Robben Island:</strong> Historic prison tour (book in advance)</p>
+                <p><strong>District Six Museum:</strong> Apartheid history</p>
+                <p><strong>Bo-Kaap:</strong> Colorful houses and Cape Malay culture</p>
+            </div>
+        </div>
+        
+        <!-- Farewell Page -->
+        <div class="content-page" id="farewell">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">So Long, Farewell!</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Check-out Instructions</h3>
+                <p>Check-out time is 10:00 AM.</p>
+                <p>Please leave the keys in the lockbox.</p>
+                <p>Make sure all windows and doors are locked before departure.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Trash & Recycling</h3>
+                <p>Please take all trash to the bins located at the side of the house.</p>
+                <p>Recycling (glass, paper, plastic) can be placed in the blue bins.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Reviews & Feedback</h3>
+                <p>We hope you enjoyed your stay! We would greatly appreciate if you could leave a review.</p>
+                <p>Any feedback to help us improve is always welcome.</p>
+                <p>We hope to welcome you back soon!</p>
+            </div>
+        </div>
         
         <!-- Navigation Bar -->
         <div class="nav-bar">
