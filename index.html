@@ -44,56 +44,77 @@
     </div>
 
     <script>
-        // Function to show menu and hide welcome screen
-        function showMenu() {
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('menu').style.display = 'block';
-        }
-
-        // Add event listeners to menu items to show/hide pages
-        document.querySelectorAll('.menu-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Hide all content pages
-                document.querySelectorAll('.content-page').forEach(page => {
-                    page.style.display = 'none';
-                });
-                
-                // Show the selected page
-                const pageId = this.getAttribute('data-page');
-                document.getElementById(pageId).style.display = 'block';
-            });
-        });
-
-        // Add event listeners to back buttons
-        document.querySelectorAll('.back-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Hide all content pages
-                document.querySelectorAll('.content-page').forEach(page => {
-                    page.style.display = 'none';
-                });
-                
-                // Show menu
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to show menu and hide welcome screen
+            function showMenu() {
+                document.getElementById('welcome-screen').style.display = 'none';
                 document.getElementById('menu').style.display = 'block';
-            });
-        });
+            }
 
-        // Optional: Search functionality (basic implementation)
-        document.querySelector('.search-bar input').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
+            // Attach show menu function to Get Started button
+            const getStartedBtn = document.getElementById('get-started');
+            if (getStartedBtn) {
+                getStartedBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showMenu();
+                });
+            }
+
+            // Add event listeners to menu items to show/hide pages
             const menuItems = document.querySelectorAll('.menu-item');
-            
             menuItems.forEach(item => {
-                const label = item.querySelector('.menu-label').textContent.toLowerCase();
-                const labelId = item.querySelector('.menu-label-id').textContent.toLowerCase();
-                
-                if (label.includes(searchTerm) || labelId.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Hide all content pages and menu
+                    document.getElementById('menu').style.display = 'none';
+                    document.querySelectorAll('.content-page').forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Show the selected page
+                    const pageId = this.getAttribute('data-page');
+                    const selectedPage = document.getElementById(pageId);
+                    if (selectedPage) {
+                        selectedPage.style.display = 'block';
+                    }
+                });
             });
+
+            // Add event listeners to back buttons
+            const backButtons = document.querySelectorAll('.back-button');
+            backButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Hide all content pages
+                    document.querySelectorAll('.content-page').forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Show menu
+                    document.getElementById('menu').style.display = 'block';
+                });
+            });
+
+            // Optional: Search functionality (basic implementation)
+            const searchInput = document.querySelector('.search-bar input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const menuItems = document.querySelectorAll('.menu-item');
+                    
+                    menuItems.forEach(item => {
+                        const label = item.querySelector('.menu-label').textContent.toLowerCase();
+                        const labelId = item.querySelector('.menu-label-id').textContent.toLowerCase();
+                        
+                        if (label.includes(searchTerm) || labelId.includes(searchTerm)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>
