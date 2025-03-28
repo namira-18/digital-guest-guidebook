@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to [Your Property Name]</title>
+    <style>
+        :root {
+            --primary-color: #3DD1C9;
+            --secondary-color: #2b3a4a;
+            --text-color: #333333;
+            --light-bg: #f5f5f5;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* Welcome Screen */
+        .welcome-screen {
+            position: relative;
+            height: 100vh;
+            background-image: url('/api/placeholder/500/700');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        .welcome-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        .welcome-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid white;
+            object-fit: cover;
+        }
+        
+        .welcome-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .property-name {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .property-address {
+            font-size: 14px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .action-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        
+        .get-started-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .get-started-btn:hover {
+            background-color: #33bbb4;
+            transform: translateY(-2px);
+        }
+        
+        /* Menu Grid */
+        .menu-section {
+            padding: 20px;
+            background-color: white;
+        }
+        
+        .menu-header {
+            padding: 15px 10px;
+            background-color: var(--primary-color);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        
+        .search-bar {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 100%;
+            padding: 5px;
+            outline: none;
+        }
+        
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .header-icons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px 10px;
+        }
+        
+        .menu-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .menu-label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 100;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+        
+        /* Content Pages (Hidden by default) */
+        .content-page {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            min-height: 100vh;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .content-card {
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        /* Active state for navigation */
+        .active-page {
+            display: block;
+        }
+        
+        .active-nav {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcome-screen">
+            <div class="welcome-overlay"></div>
+            <div class="welcome-content">
+                <img src="/api/placeholder/80/80" alt="Host" class="profile-img">
+                <h1 class="welcome-title">Welcome to Cape Town</h1>
+                <h2 class="property-name">Beach Retreat</h2>
+                <p class="property-address">6 Example Close, Kommetjie, Western Cape 7576 ZA</p>
+                
+                <div class="action-buttons">
+                    <a href="tel:+27123456789" class="action-button">📞</a>
+                    <a href="#" class="action-button">📩</a>
+                </div>
+                
+                <a href="#menu" class="get-started-btn" id="get-started">GET STARTED</a>
+            </div>
+        </div>
+        
+        <!-- Menu Grid -->
+        <div class="menu-section" id="menu" style="display: none;">
+            <div class="menu-header">
+                <div class="search-bar">
+                    <span>🔍</span>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="header-icons">
+                    <span>🌐</span>
+                    <span>🖨️</span>
+                </div>
+            </div>
+            
+            <div class="menu-grid">
+                <a href="#arrival" class="menu-item" data-page="arrival-info">
+                    <div class="menu-icon">✈️</div>
+                    <div class="menu-label">Arrival information</div>
+                </a>
+                <a href="#home" class="menu-item" data-page="about-home">
+                    <div class="menu-icon">🏠</div>
+                    <div class="menu-label">About the home</div>
+                </a>
+                <a href="#safety" class="menu-item" data-page="safety-info">
+                    <div class="menu-icon">📖</div>
+                    <div class="menu-label">Safety information & rules</div>
+                </a>
+                <a href="#area" class="menu-item" data-page="area-info">
+                    <div class="menu-icon">📍</div>
+                    <div class="menu-label">Practical area information</div>
+                </a>
+                <a href="#activities" class="menu-item" data-page="activities">
+                    <div class="menu-icon">🔭</div>
+                    <div class="menu-label">Activities guide</div>
+                </a>
+                <a href="#food" class="menu-item" data-page="food-guide">
+                    <div class="menu-icon">🍴</div>
+                    <div class="menu-label">Food & drink guide</div>
+                </a>
+                <a href="#wine" class="menu-item" data-page="wine-guide">
+                    <div class="menu-icon">🍷</div>
+                    <div class="menu-label">Wine regions guide</div>
+                </a>
+                <a href="#capetown" class="menu-item" data-page="cape-town">
+                    <div class="menu-icon">🏙️</div>
+                    <div class="menu-label">Visiting Cape Town</div>
+                </a>
+                <a href="#farewell" class="menu-item" data-page="farewell">
+                    <div class="menu-icon">🧳</div>
+                    <div class="menu-label">So Long, Farewell!</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Content Pages -->
+        <!-- Arrival Information Page -->
+        <div class="content-page" id="arrival-info">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">Arrival Information</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">Check-in Instructions</h3>
+                <p>Check-in time is from 2:00 PM to 8:00 PM. Self check-in is available with the key lockbox. The lockbox code will be sent to you on the day of arrival.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Getting Here</h3>
+                <p>From Cape Town International Airport:</p>
+                <ul>
+                    <li>By car: 45-minute drive via M3 and M5 highways</li>
+                    <li>By taxi/Uber: Approximately 500-600 ZAR</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Parking Information</h3>
+                <p>Free on-site parking is available for one vehicle. Please park in the designated area marked with your unit number.</p>
+            </div>
+        </div>
+        
+        <!-- About the Home Page -->
+        <div class="content-page" id="about-home">
+            <a href="#menu" class="back-button">← Back to Menu</a>
+            <h2 class="page-title">About the Home</h2>
+            
+            <div class="content-card">
+                <h3 class="card-title">WiFi</h3>
+                <p>Network: BeachRetreat_Guest</p>
+                <p>Password: SunSand2023!</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Air Conditioning & Heating</h3>
+                <p>Remote controls for the AC units are located on the bedside tables. Please turn off when leaving the property.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Kitchen</h3>
+                <p>The kitchen is fully equipped with a refrigerator, stove, oven, microwave, kettle, and coffee maker. Basic supplies like coffee, tea, sugar, salt, and pepper are provided.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">TV & Entertainment</h3>
+                <p>Smart TV with Netflix and YouTube access. Please use your own account to log in and remember to log out before departure.</p>
+            </div>
+        </div>
+        
+        <!-- Other content pages would follow the same pattern -->
+        
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <a href="#menu" class="nav-item active-nav" data-nav="home">
+                <div class="nav-icon">🏠</div>
+                <div>HOME</div>
+            </a>
+            <a href="#" class="nav-item" data-nav="info">
+                <div class="nav-icon">ℹ️</div>
+                <div>INFO</div>
+            </a>
+            <a href="#" class="nav-item" data-nav="map">
+                <div class="nav-icon">🗺️</div>
+                <div>MAP</div>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Basic navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const menuSection = document.getElementById('menu');
+            const getStartedBtn = document.getElementById('get-started');
+            const backButtons = document.querySelectorAll('.back-button');
+            const menuItems = document.querySelectorAll('.menu-item');
+            const contentPages = document.querySelectorAll('.content-page');
+            
+            // Get Started button
+            getStartedBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                welcomeScreen.style.display = 'none';
+                menuSection.style.display = 'block';
+            });
+            
+            // Back buttons
+            backButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    hideAllContentPages();
+                    menuSection.style.display = 'block';
+                });
+            });
+            
+            // Menu items
+            menuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    hideAllContentPages();
+                    menuSection.style.display = 'none';
+                    document.getElementById(pageId).style.display = 'block';
+                });
+            });
+            
+            function hideAllContentPages() {
+                contentPages.forEach(page => {
+                    page.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
