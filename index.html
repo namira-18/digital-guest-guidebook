@@ -3,348 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Surabaya Homey</title>
-    <style>
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #2E7D32;
-            --text-color: #333333;
-            --light-bg: #f5f5f5;
-            --border-radius: 12px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f9f9f9;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .welcome-screen {
-            position: relative;
-            height: 100vh;
-            background-image: url('https://images.unsplash.com/photo-1543321269-3a0e7fc5b9f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-        .welcome-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-        .welcome-content {
-            position: relative;
-            z-index: 2;
-            width: 90%;
-            max-width: 600px;
-        }
-        .logo-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid white;
-            object-fit: cover;
-            background-color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .welcome-title {
-            font-size: 28px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        .welcome-subtitle {
-            font-size: 18px;
-            margin-bottom: 20px;
-            font-weight: 400;
-            font-style: italic;
-        }
-        .property-address {
-            font-size: 14px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        .action-buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-            justify-content: center;
-        }
-        .action-button {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 2px solid var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-        }
-        .get-started-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 40px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .get-started-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        .language-indicator {
-            font-size: 12px;
-            font-weight: bold;
-            color: var(--primary-color);
-            background-color: white;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-bottom: 5px;
-            display: inline-block;
-        }
-        .menu-section {
-            padding: 20px;
-            background-color: white;
-        }
-        .menu-header {
-            padding: 15px 10px;
-            background-color: var(--primary-color);
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-        .search-bar {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .search-bar input {
-            background: transparent;
-            border: none;
-            color: white;
-            width: 100%;
-            padding: 5px;
-            outline: none;
-        }
-        .search-bar input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .header-icons {
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            color: white;
-            font-size: 20px;
-        }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 20px 10px;
-        }
-        .menu-item {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 150px;
-            text-decoration: none;
-            color: var(--text-color);
-            border: 1px solid #eaeaea;
-        }
-        .menu-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
-        .menu-icon {
-            font-size: 24px;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        .menu-label {
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .menu-label-id {
-            font-size: 12px;
-            color: #666;
-            margin-top: 4px;
-        }
-        .nav-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--secondary-color);
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 0;
-            z-index: 100;
-        }
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-        }
-        .nav-icon {
-            font-size: 20px;
-            margin-bottom: 4px;
-        }
-        .content-page {
-            display: none;
-            padding: 20px;
-            background-color: white;
-            min-height: 100vh;
-            padding-bottom: 70px; /* Space for navigation bar */
-        }
-        .page-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        .page-title-id {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-            font-style: italic;
-        }
-        .back-button {
-            display: inline-block;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .content-card {
-            background-color: var(--light-bg);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-        }
-        .card-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-        .card-title-id {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-            font-style: italic;
-        }
-        .active-page {
-            display: block;
-        }
-        .active-nav {
-            color: #8eff8e;
-        }
-    </style>
+    <title>Hotel Check-in Guide</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <!-- Welcome Screen -->
-        <div class="welcome-screen" id="welcome-screen">
-            <div class="welcome-overlay"></div>
-            <div class="welcome-content">
-                <div class="logo-img">GSH</div>
-                <h1 class="welcome-title">Welcome to Green Surabaya Homey</h1>
-                <h2 class="welcome-subtitle">Affordable Accommodation for Everyone!</h2>
-                <p class="property-address">Jl. Pucang Anom Timur II No.11, Kertajaya, Kec. Gubeng, Surabaya, Jawa Timur 60282</p>
-                <div class="action-buttons">
-                    <a href="https://wa.me/6282144489313" class="action-button">📞</a>
-                    <a href="mailto:surabayahomeyguesthouse@gmail.com" class="action-button">📩</a>
+<body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="text/babel">
+        const CheckInGuide = () => {
+            return (
+                <div className="max-w-2xl mx-auto p-6 bg-white min-h-screen">
+                    <header className="text-center mb-8">
+                        <h1 className="text-4xl font-bold mb-2 text-blue-800">Panduan Check-In</h1>
+                        <h2 className="text-2xl mb-2">Green Surabaya Homey</h2>
+                        <p className="text-gray-600 text-xl">Selamat Datang! 🏡</p>
+                    </header>
+
+                    {/* Check-in Time */}
+                    <section className="mb-6 bg-gray-50 p-4 rounded-lg">
+                        <h2 className="font-bold mb-2 text-blue-800">📌 Waktu Check-In & Check-Out</h2>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="flex items-center"><span className="mr-2">⏰</span> Check-in: 14.00</div>
+                            <div className="flex items-center"><span className="mr-2">⏰</span> Check-out: 12.00</div>
+                        </div>
+                        <p className="text-sm text-gray-600 mt-2">🔹 Early check-in/late check-out: Hubungi kami</p>
+                    </section>
+
+                    {/* Check-in Process */}
+                    <section className="mb-6 bg-gray-50 p-4 rounded-lg">
+                        <h2 className="font-bold mb-2 text-blue-800">🛎 Proses Check-In</h2>
+                        <div>
+                            <h3 className="font-semibold">1️⃣ Konfirmasi Identitas</h3>
+                            <ul className="list-disc ml-6 mb-4">
+                                <li>Tunjukkan pesan ini</li>
+                                <li>KTP/Paspor/SIM</li>
+                                <li>Bukti Menikah/KTP satu alamat (untuk pasangan)</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    {/* Facilities */}
+                    <section className="mb-6 bg-gray-50 p-4 rounded-lg">
+                        <h2 className="font-bold mb-2 text-blue-800">📡 Fasilitas Guesthouse</h2>
+                        <div className="grid grid-cols-2 gap-2">
+                            <div className="flex items-center"><span className="mr-2">✔</span> WiFi: Saat check-in</div>
+                            <div className="flex items-center"><span className="mr-2">✔</span> Dapur Bersama: 07.00-20.00</div>
+                            <div className="flex items-center"><span className="mr-2">✔</span> Ruang Santai</div>
+                            <div className="flex items-center"><span className="mr-2">✔</span> Laundry (biaya tambahan)</div>
+                            <div className="flex items-center"><span className="mr-2">✔</span> Parkir (kunci ganda)</div>
+                        </div>
+                    </section>
+
+                    {/* Rules */}
+                    <section className="mb-6 bg-gray-50 p-4 rounded-lg">
+                        <h2 className="font-bold mb-2 text-blue-800">📜 Aturan Guesthouse</h2>
+                        <div className="space-y-2">
+                            <div className="flex items-center"><span className="mr-2">❌</span> Dilarang merokok dalam kamar</div>
+                            <div className="flex items-center"><span className="mr-2">🔇</span> Jaga ketenangan setelah 21.00</div>
+                            <div className="flex items-center"><span className="mr-2">🔑</span> Kunci kamar saat keluar</div>
+                            <div className="flex items-center"><span className="mr-2">♻</span> Buang sampah pada tempatnya</div>
+                        </div>
+                    </section>
+
+                    {/* Contact */}
+                    <section className="bg-blue-50 p-4 rounded-lg">
+                        <h2 className="font-bold mb-2 text-blue-800">📞 Butuh bantuan?</h2>
+                        <p>Hubungi kami melalui WhatsApp di nomor yang tertera pada bukti pemesanan.</p>
+                        <p className="mt-4 text-center font-semibold">Selamat beristirahat! 😊</p>
+                    </section>
                 </div>
-                <button class="get-started-btn" id="get-started">GET STARTED</button>
-            </div>
-        </div>
-        <!-- Menu Grid -->
-        <div class="menu-section" id="menu" style="display: none;">
-            <div class="menu-header">
-                <div class="search-bar">
-                    <span>🔍</span>
-                    <input type="text" placeholder="Search">
-                </div>
-                <div class="header-icons">
-                    <span>🌐</span>
-                    <span>🏠</span>
-                </div>
-            </div>
-            <div class="menu-grid">
-                <a href="#checkin" class="menu-item" data-page="checkin-info">
-                    <div class="menu-icon">🔑</div>
-                    <div class="menu-label">Check-in Instructions</div>
-                    <div class="menu-label-id">Petunjuk Check-in</div>
-                </a>
-                <a href="#home" class="menu-item" data-page="about-home">
-                    <div class="menu-icon">🏠</div>
-                    <div class="menu-label">About the Home</div>
-                    <div class="menu-label-id">Tentang Penginapan</div>
-                </a>
-                <a href="#rules" class="menu-item" data-page="house-rules">
-                    <div class="menu-icon">📋</div>
-                    <div class="menu-label">House Rules</div>
-                    <div class="menu-label-id">Peraturan Rumah</div>
-                </a>
-                <a href="#activities" class="menu-item" data-page="activities-guide">
-                    <div class="menu-icon">🏙️</div>
-                    <div the="menu-label">Activities Guide</div>
-                    <div the="menu-label-id">Panduan Aktivitas</div>
-                </a>
-                <a href="#food" class="menu-item" data-page="food-guide">
-                    <div class="menu-icon">🍲</div>
-                    <div the="menu-label">Culinary Guide</div>
-                    <div the="menu-label-id">Panduan Kuliner</div>
-                </a>
-                <a href="#checkout" class="menu-item" data-page="checkout-info">
-                    <div class="menu-icon">🔄</div>
-                    <div the="menu-label">Check-out Instructions</div>
-                    <div the="menu-label-id">Petunjuk Check-out</div>
-                </a>
-            </div>
-        </div>
-    </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<CheckInGuide />);
+    </script>
 </body>
 </html>
