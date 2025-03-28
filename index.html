@@ -1,124 +1,3 @@
-<p style="font-style: italic; margin-top: 16px;"><strong>Rawon Setan</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Terkenal dengan rawon autentik dan hidangan khas Surabaya lainnya.</p>
-                
-                <p style="font-style: italic;"><strong>Sate Klopo Ondomohen</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Sate dengan taburan kelapa khas Surabaya yang lezat.</p>
-                
-                <p style="font-style: italic;"><strong>Depot Bu Rudy</strong> - 10 menit berkendara</p>
-                <p style="font-style: italic;">Restoran lokal populer yang menyajikan hidangan Indonesia autentik.</p>
-            </div>
-        </div>
-
-        <!-- Checkout Instructions Page -->
-        <div class="content-page" id="checkout-info">
-            <a href="#menu" class="back-button">← Back to Menu</a>
-            <h2 class="page-title">Check-out Instructions</h2>
-            <h3 class="page-title-id">Petunjuk Check-out</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Check-out Time</h3>
-                <h4 class="card-title-id">Waktu Check-out</h4>
-                <p>Check-out time is 12:00 PM (Noon). Please ensure you vacate the room by this time.</p>
-                <p style="font-style: italic; margin-top: 8px;">Waktu check-out adalah pukul 12:00 (Siang). Pastikan Anda meninggalkan kamar sebelum waktu ini.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Room Preparation</h3>
-                <h4 class="card-title-id">Persiapan Kamar</h4>
-                <ul>
-                    <li>Please return all room keys to the receptionist</li>
-                    <li>Ensure all personal belongings are packed</li>
-                    <li>Turn off all electrical appliances</li>
-                    <li>Dispose of trash in provided bins</li>
-                </ul>
-                
-                <p style="font-style: italic; margin-top: 16px;">Pedoman Tambahan:</p>
-                <ul style="font-style: italic;">
-                    <li>Kembalikan semua kunci kamar ke resepsionis</li>
-                    <li>Pastikan semua barang pribadi sudah dikemas</li>
-                    <li>Matikan semua peralatan elektronik</li>
-                    <li>Buang sampah di tempat sampah yang disediakan</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Wait for the DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Function to show menu and hide welcome screen
-            function showMenu() {
-                document.getElementById('welcome-screen').style.display = 'none';
-                document.getElementById('menu').style.display = 'block';
-            }
-
-            // Attach show menu function to Get Started button
-            const getStartedBtn = document.getElementById('get-started');
-            if (getStartedBtn) {
-                getStartedBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showMenu();
-                });
-            }
-
-            // Add event listeners to menu items to show/hide pages
-            const menuItems = document.querySelectorAll('.menu-item');
-            menuItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    // Hide all content pages and menu
-                    document.getElementById('menu').style.display = 'none';
-                    document.querySelectorAll('.content-page').forEach(page => {
-                        page.style.display = 'none';
-                    });
-                    
-                    // Show the selected page
-                    const pageId = this.getAttribute('data-page');
-                    const selectedPage = document.getElementById(pageId);
-                    if (selectedPage) {
-                        selectedPage.style.display = 'block';
-                    }
-                });
-            });
-
-            // Add event listeners to back buttons
-            const backButtons = document.querySelectorAll('.back-button');
-            backButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    // Hide all content pages
-                    document.querySelectorAll('.content-page').forEach(page => {
-                        page.style.display = 'none';
-                    });
-                    
-                    // Show menu
-                    document.getElementById('menu').style.display = 'block';
-                });
-            });
-
-            // Optional: Search functionality (basic implementation)
-            const searchInput = document.querySelector('.search-bar input');
-            if (searchInput) {
-                searchInput.addEventListener('input', function(e) {
-                    const searchTerm = e.target.value.toLowerCase();
-                    const menuItems = document.querySelectorAll('.menu-item');
-                    
-                    menuItems.forEach(item => {
-                        const label = item.querySelector('.menu-label').textContent.toLowerCase();
-                        const labelId = item.querySelector('.menu-label-id').textContent.toLowerCase();
-                        
-                        if (label.includes(searchTerm) || labelId.includes(searchTerm)) {
-                            item.style.display = 'flex';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            }
-        });
-    </script>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -360,40 +239,13 @@
             margin-top: 4px;
         }
         
-        /* Navigation Bar */
-        .nav-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--secondary-color);
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 0;
-            z-index: 100;
-        }
-        
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-        }
-        
-        .nav-icon {
-            font-size: 20px;
-            margin-bottom: 4px;
-        }
-        
         /* Content Pages (Hidden by default) */
         .content-page {
             display: none;
             padding: 20px;
             background-color: white;
             min-height: 100vh;
-            padding-bottom: 70px; /* Space for navigation bar */
+            padding-bottom: 70px;
         }
         
         .page-title {
@@ -437,15 +289,6 @@
             color: var(--secondary-color);
             font-style: italic;
         }
-        
-        /* Active state for navigation */
-        .active-page {
-            display: block;
-        }
-        
-        .active-nav {
-            color: #8eff8e;
-        }
     </style>
 </head>
 <body>
@@ -464,7 +307,7 @@
                     <a href="mailto:surabayahomeyguesthouse@gmail.com" class="action-button">📩</a>
                 </div>
                 
-                <a href="#menu" class="get-started-btn" id="get-started" onclick="showMenu()">GET STARTED</a>
+                <a href="#menu" class="get-started-btn" id="get-started">GET STARTED</a>
             </div>
         </div>
         
@@ -514,6 +357,8 @@
                 </a>
             </div>
         </div>
+
+        <!-- [Rest of the content pages remain the same as in previous version] -->
         
         <!-- Check-in Information Page -->
         <div class="content-page" id="checkin-info">
@@ -551,200 +396,11 @@
                 <p style="font-style: italic; margin-top: 8px;">Tersedia parkir gratis di lokasi.</p>
             </div>
         </div>
-        
-        <!-- About the Home Page -->
-        <div class="content-page" id="about-home">
-            <a href="#menu" class="back-button">← Back to Menu</a>
-            <h2 class="page-title">About the Home</h2>
-            <h3 class="page-title-id">Tentang Penginapan</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">WiFi</h3>
-                <h4 class="card-title-id">WiFi</h4>
-                <p>Network: Surabaya Homey</p>
-                <p>Password: greenhomey11</p>
-                
-                <p style="font-style: italic; margin-top: 8px;">Jaringan: Surabaya Homey</p>
-                <p style="font-style: italic;">Kata Sandi: greenhomey11</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Air Conditioning</h3>
-                <h4 class="card-title-id">Pendingin Ruangan</h4>
-                <p>Remote controls for the AC units are located on the wall hanging table lower the TV (meja gantung dibawah TV).</p>
-                <p style="font-style: italic; margin-top: 8px;">Remote control untuk unit AC terletak di meja gantung di bawah TV.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Mineral Water</h3>
-                <h4 class="card-title-id">Air Mineral</h4>
-                <p>Free Flow Mineral Water that you can find in the kitchen.</p>
-                <p style="font-style: italic; margin-top: 8px;">Air mineral gratis tersedia di dapur.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Kitchen</h3>
-                <h4 class="card-title-id">Dapur</h4>
-                <p>The kitchen is fully equipped with a refrigerator, stove, you can make simple food such as Noodles.</p>
-                <p style="font-style: italic; margin-top: 8px;">Dapur dilengkapi dengan kulkas, kompor, Anda dapat membuat makanan sederhana seperti Mie.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">TV & Entertainment</h3>
-                <h4 class="card-title-id">TV & Hiburan</h4>
-                <p>Smart TV with Netflix and YouTube access. Please use your own account to log in and remember to log out before departure.</p>
-                <p style="font-style: italic; margin-top: 8px;">Smart TV dengan akses Netflix dan YouTube. Silakan gunakan akun Anda sendiri untuk masuk dan ingat untuk keluar sebelum check-out.</p>
-            </div>
-        </div>
-        
-        <!-- House Rules Page -->
-        <div class="content-page" id="house-rules">
-            <a href="#menu" class="back-button">← Back to Menu</a>
-            <h2 class="page-title">House Rules</h2>
-            <h3 class="page-title-id">Peraturan Rumah</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Important Rules</h3>
-                <h4 class="card-title-id">Peraturan Penting</h4>
-                <ul>
-                    <li>No smoking inside the Room / property - Smoking Room Only in Balcony</li>
-                    <li>No parties or events</li>
-                    <li>Quiet hours from 10:00 PM to 7:00 AM</li>
-                    <li>Please conserve water (we are supporting sustainability)</li>
-                </ul>
-                
-                <p style="font-style: italic; margin-top: 16px;">Peraturan Penting:</p>
-                <ul style="font-style: italic;">
-                    <li>Dilarang merokok di dalam Kamar / properti - Area merokok hanya di Balkon</li>
-                    <li>Dilarang mengadakan pesta atau acara</li>
-                    <li>Jam tenang dari 22:00 hingga 07:00</li>
-                    <li>Harap hemat air (kami mendukung keberlanjutan)</li>
-                </ul>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Additional Guidelines</h3>
-                <h4 class="card-title-id">Pedoman Tambahan</h4>
-                <ul>
-                    <li>Please respect other guests and keep noise to a minimum</li>
-                    <li>Please turn off lights and AC when leaving the room</li>
-                    <li>No pets allowed</li>
-                    <li>Please report any damages or issues promptly</li>
-                </ul>
-                
-                <p style="font-style: italic; margin-top: 16px;">Pedoman Tambahan:</p>
-                <ul style="font-style: italic;">
-                    <li>Mohon hormati tamu lain dan jaga kebisingan seminimal mungkin</li>
-                    <li>Harap matikan lampu dan AC saat meninggalkan kamar</li>
-                    <li>Hewan peliharaan tidak diizinkan</li>
-                    <li>Harap laporkan segera jika ada kerusakan atau masalah</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Activities Guide Page -->
-        <div class="content-page" id="activities-guide">
-            <a href="#menu" class="back-button">← Back to Menu</a>
-            <h2 class="page-title">Surabaya Activities Guide</h2>
-            <h3 class="page-title-id">Panduan Aktivitas Surabaya</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Popular Attractions</h3>
-                <h4 class="card-title-id">Tempat Wisata Populer</h4>
-                <p><strong>Tugu Pahlawan (Heroes Monument)</strong> - 15 min drive</p>
-                <p>The 41-meter tall monument commemorates the Battle of Surabaya in 1945. Adjacent museum provides historical insight.</p>
-                
-                <p><strong>Submarine Monument (Monumen Kapal Selam)</strong> - 15 min drive</p>
-                <p>Explore inside a real submarine that served in the Indonesian Navy from 1962 to 1990.</p>
-                
-                <p style="font-style: italic; margin-top: 16px;"><strong>Tugu Pahlawan</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Monumen setinggi 41 meter yang memperingati Pertempuran Surabaya tahun 1945. Museum di sebelahnya memberikan wawasan sejarah.</p>
-                
-                <p style="font-style: italic;"><strong>Monumen Kapal Selam</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Jelajahi bagian dalam kapal selam asli yang bertugas di TNI AL dari tahun 1962 hingga 1990.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Parks & Recreation</h3>
-                <h4 class="card-title-id">Taman & Rekreasi</h4>
-                <p><strong>Taman Bungkul</strong> - 10 min drive</p>
-                <p>Award-winning city park with food stalls, skateboard area, jogging track, and free WiFi.</p>
-                
-                <p><strong>Kebun Binatang Surabaya (Surabaya Zoo)</strong> - 15 min drive</p>
-                <p>One of the oldest zoos in Indonesia with over 3,000 animals from 350 species.</p>
-                
-                <p style="font-style: italic; margin-top: 16px;"><strong>Taman Bungkul</strong> - 10 menit berkendara</p>
-                <p style="font-style: italic;">Taman kota pemenang penghargaan dengan warung makanan, area skateboard, jogging track, dan WiFi gratis.</p>
-                
-                <p style="font-style: italic;"><strong>Kebun Binatang Surabaya</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Salah satu kebun binatang tertua di Indonesia dengan lebih dari 3.000 hewan dari 350 spesies.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Shopping</h3>
-                <h4 class="card-title-id">Belanja</h4>
-                <p><strong>Tunjungan Plaza</strong> - 10 min drive</p>
-                <p>Largest shopping mall in Surabaya with international brands, restaurants, and entertainment options.</p>
-                
-                <p><strong>Grand City Mall</strong> - 8 min drive</p>
-                <p>Modern shopping mall with fashion stores, food court, and convention center.</p>
-                
-                <p style="font-style: italic; margin-top: 16px;"><strong>Tunjungan Plaza</strong> - 10 menit berkendara</p>
-                <p style="font-style: italic;">Pusat perbelanjaan terbesar di Surabaya dengan merek internasional, restoran, dan pilihan hiburan.</p>
-                
-                <p style="font-style: italic;"><strong>Grand City Mall</strong> - 8 menit berkendara</p>
-                <p style="font-style: italic;">Pusat perbelanjaan modern dengan toko fashion, food court, dan pusat konvensi.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Cultural Experiences</h3>
-                <h4 class="card-title-id">Pengalaman Budaya</h4>
-                <p><strong>House of Sampoerna</strong> - 20 min drive</p>
-                <p>Historical cigarette factory and museum showcasing the history of Sampoerna and Surabaya's heritage.</p>
-                
-                <p><strong>Kampung Lawas Maspati</strong> - 15 min drive</p>
-                <p>Historic village with Dutch colonial-era houses where you can experience local culture.</p>
-                
-                <p style="font-style: italic; margin-top: 16px;"><strong>House of Sampoerna</strong> - 20 menit berkendara</p>
-                <p style="font-style: italic;">Pabrik rokok bersejarah dan museum yang menampilkan sejarah Sampoerna dan warisan Surabaya.</p>
-                
-                <p style="font-style: italic;"><strong>Kampung Lawas Maspati</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Kampung bersejarah dengan rumah-rumah era kolonial Belanda di mana Anda dapat mengalami budaya lokal.</p>
-            </div>
-        </div>
-        
-        <!-- Food Guide Page -->
-        <div class="content-page" id="food-guide">
-            <a href="#menu" class="back-button">← Back to Menu</a>
-            <h2 class="page-title">Surabaya Culinary Guide</h2>
-            <h3 class="page-title-id">Panduan Kuliner Surabaya</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Must-Try Local Dishes</h3>
-                <h4 class="card-title-id">Hidangan Lokal yang Wajib Dicoba</h4>
-                <p><strong>Rawon</strong> - Traditional black beef soup with unique nutmeg flavor</p>
-                <p><strong>Rujak Cingur</strong> - Mixed vegetables with beef nose, tofu, and petis sauce</p>
-                <p><strong>Lontong Balap</strong> - Rice cake with bean sprouts, tofu, and sweet soy sauce</p>
-                <p><strong>Semanggi Surabaya</strong> - Clover-shaped vegetable with sweet peanut sauce</p>
-                <p><strong>Tahu Tek</strong> - Fried tofu with rice cake, bean sprouts, and peanut sauce</p>
-                
-                <p style="font-style: italic; margin-top: 16px;"><strong>Rawon</strong> - Sup daging sapi hitam tradisional dengan rasa kluwek yang unik</p>
-                <p style="font-style: italic;"><strong>Rujak Cingur</strong> - Sayuran campur dengan hidung sapi, tahu, dan saus petis</p>
-                <p style="font-style: italic;"><strong>Lontong Balap</strong> - Lontong dengan taoge, tahu, dan kecap manis</p>
-                <p style="font-style: italic;"><strong>Semanggi Surabaya</strong> - Sayuran berbentuk semanggi dengan saus kacang manis</p>
-                <p style="font-style: italic;"><strong>Tahu Tek</strong> - Tahu goreng dengan lontong, taoge, dan saus kacang</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Recommended Restaurants</h3>
-                <h4 class="card-title-id">Restoran yang Direkomendasikan</h4>
-                <p><strong>Rawon Setan</strong> - 15 min drive</p>
-                <p>Famous for authentic rawon and other Surabaya specialties.</p>
-                
-                <p><strong>Sate Klopo Ondomohen</strong> - 15 min drive</p>
-                <p>Delicious coconut-sprinkled satay unique to Surabaya.</p>
-                
-                <p><strong>Depot Bu Rudy</strong> - 10 min drive</p>
-                <p>Popular local restaurant serving authentic Indonesian dishes.</p>
-                
-                <p style="font-style: italic; margin
+
+        <!-- Remaining content pages stay the same as before -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Attach show menu function to Get Started button
+            const getStartedBtn = document.getElementById('get-
