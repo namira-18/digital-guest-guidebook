@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -325,6 +325,19 @@
         .active-nav {
             color: #8eff8e;
         }
+        
+        /* Indonesian first, then English styling */
+        .indo-text {
+            margin-bottom: 16px;
+        }
+        
+        .eng-text {
+            margin-top: 16px;
+            opacity: 0.7;
+            font-style: italic;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -334,8 +347,8 @@
             <div class="welcome-overlay"></div>
             <div class="welcome-content">
                 <div class="logo-img">GSH</div>
-                <h1 class="welcome-title">Welcome to Green Surabaya Homey</h1>
-                <h2 class="welcome-subtitle">Affordable Accommodation for Everyone!</h2>
+                <h1 class="welcome-title">Selamat Datang di Green Surabaya Homey</h1>
+                <h2 class="welcome-subtitle">Akomodasi Terjangkau untuk Semua!</h2>
                 <p class="property-address">Jl. Pucang Anom Timur II No.11, Kertajaya, Kec. Gubeng, Surabaya, Jawa Timur 60282</p>
                 
                 <div class="action-buttons">
@@ -343,7 +356,7 @@
                     <a href="mailto:surabayahomeyguesthouse@gmail.com" class="action-button">📩</a>
                 </div>
                 
-                <button class="get-started-btn" id="get-started">GET STARTED</button>
+                <button class="get-started-btn" id="get-started">MULAI</button>
             </div>
         </div>
         
@@ -352,7 +365,7 @@
             <div class="menu-header">
                 <div class="search-bar">
                     <span>🔍</span>
-                    <input type="text" placeholder="Search">
+                    <input type="text" placeholder="Pencarian">
                 </div>
                 <div class="header-icons">
                     <span>🌐</span>
@@ -363,229 +376,375 @@
             <div class="menu-grid">
                 <div class="menu-item" data-page="checkin-info">
                     <div class="menu-icon">🔑</div>
-                    <div class="menu-label">Check-in Instructions</div>
-                    <div class="menu-label-id">Petunjuk Check-in</div>
+                    <div class="menu-label">Petunjuk Check-in</div>
+                    <div class="menu-label-id">Check-in Instructions</div>
                 </div>
                 <div class="menu-item" data-page="about-home">
                     <div class="menu-icon">🏠</div>
-                    <div class="menu-label">About the Home</div>
-                    <div class="menu-label-id">Tentang Penginapan</div>
+                    <div class="menu-label">Tentang Penginapan</div>
+                    <div class="menu-label-id">About the Home</div>
+                </div>
+                <div class="menu-item" data-page="wifi-info">
+                    <div class="menu-icon">📡</div>
+                    <div class="menu-label">Informasi WiFi</div>
+                    <div class="menu-label-id">WiFi Information</div>
                 </div>
                 <div class="menu-item" data-page="house-rules">
                     <div class="menu-icon">📋</div>
-                    <div class="menu-label">House Rules</div>
-                    <div class="menu-label-id">Peraturan Rumah</div>
+                    <div class="menu-label">Peraturan Rumah</div>
+                    <div class="menu-label-id">House Rules</div>
+                </div>
+                <div class="menu-item" data-page="special-offer">
+                    <div class="menu-icon">🎁</div>
+                    <div class="menu-label">Penawaran Khusus</div>
+                    <div class="menu-label-id">Special Offer</div>
                 </div>
                 <div class="menu-item" data-page="activities-guide">
                     <div class="menu-icon">🏙️</div>
-                    <div class="menu-label">Activities Guide</div>
-                    <div class="menu-label-id">Panduan Aktivitas</div>
+                    <div class="menu-label">Panduan Aktivitas</div>
+                    <div class="menu-label-id">Activities Guide</div>
                 </div>
                 <div class="menu-item" data-page="food-guide">
                     <div class="menu-icon">🍲</div>
-                    <div class="menu-label">Culinary Guide</div>
-                    <div class="menu-label-id">Panduan Kuliner</div>
+                    <div class="menu-label">Panduan Kuliner</div>
+                    <div class="menu-label-id">Culinary Guide</div>
+                </div>
+                <div class="menu-item" data-page="coffee-guide">
+                    <div class="menu-icon">☕</div>
+                    <div class="menu-label">Panduan Kopi</div>
+                    <div class="menu-label-id">Coffee Guide</div>
+                </div>
+                <div class="menu-item" data-page="food-menu">
+                    <div class="menu-icon">🍽️</div>
+                    <div class="menu-label">Menu & Layanan</div>
+                    <div class="menu-label-id">Food Menu & Service</div>
                 </div>
                 <div class="menu-item" data-page="checkout-info">
                     <div class="menu-icon">🔄</div>
-                    <div class="menu-label">Check-out Instructions</div>
-                    <div class="menu-label-id">Petunjuk Check-out</div>
+                    <div class="menu-label">Petunjuk Check-out</div>
+                    <div class="menu-label-id">Check-out Instructions</div>
                 </div>
             </div>
         </div>
         
         <!-- Check-in Information Page -->
         <div class="content-page" id="checkin-info">
-            <div class="back-button">← Back to Menu</div>
-            <h2 class="page-title">Check-in Instructions</h2>
-            <h3 class="page-title-id">Petunjuk Check-in</h3>
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Petunjuk Check-in</h2>
+            <h3 class="page-title-id">Check-in Instructions</h3>
             
             <div class="content-card">
-                <h3 class="card-title">Check-in Time</h3>
-                <h4 class="card-title-id">Waktu Check-in</h4>
-                <p>Check-in time is from 2:00 PM to 11:00 PM. Our Receptionist will greet you in the property.</p>
-                <p style="font-style: italic; margin-top: 8px;">Waktu check-in adalah dari jam 14:00 hingga 23:00. Resepsionis kami akan menyambut Anda di properti.</p>
+                <h3 class="card-title">Waktu Check-in</h3>
+                <div class="indo-text">
+                    <p>Waktu check-in adalah dari jam 14:00 hingga 23:00. Resepsionis kami akan menyambut Anda di properti.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Check-in time is from 2:00 PM to 11:00 PM. Our Receptionist will greet you in the property.</p>
+                </div>
             </div>
             
             <div class="content-card">
-                <h3 class="card-title">Getting Here</h3>
-                <h4 class="card-title-id">Cara Menuju Lokasi</h4>
-                <p>From Juanda International Airport:</p>
-                <ul>
-                    <li>By car: 40 minutes drive</li>
-                    <li>By taxi/Uber: Approximately Rp150.000</li>
-                </ul>
-                
-                <p style="font-style: italic; margin-top: 8px;">Dari Bandara Internasional Juanda:</p>
-                <ul style="font-style: italic;">
-                    <li>Dengan mobil: 40 menit perjalanan</li>
-                    <li>Dengan taksi/Uber: Sekitar Rp150.000</li>
-                </ul>
+                <h3 class="card-title">Cara Menuju Lokasi</h3>
+                <div class="indo-text">
+                    <p>Dari Bandara Internasional Juanda:</p>
+                    <ul>
+                        <li>Dengan mobil: 40 menit perjalanan</li>
+                        <li>Dengan taksi/Uber: Sekitar Rp150.000</li>
+                    </ul>
+                </div>
+                <div class="eng-text">
+                    <p>From Juanda International Airport:</p>
+                    <ul>
+                        <li>By car: 40 minutes drive</li>
+                        <li>By taxi/Uber: Approximately Rp150.000</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="content-card">
-                <h3 class="card-title">Parking Information</h3>
-                <h4 class="card-title-id">Informasi Parkir</h4>
-                <p>Free on-site parking is available.</p>
-                <p style="font-style: italic; margin-top: 8px;">Tersedia parkir gratis di lokasi.</p>
+                <h3 class="card-title">Informasi Parkir</h3>
+                <div class="indo-text">
+                    <p>Tersedia parkir gratis di lokasi.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Free on-site parking is available.</p>
+                </div>
             </div>
         </div>
         
         <!-- About the Home Page -->
         <div class="content-page" id="about-home">
-            <div class="back-button">← Back to Menu</div>
-            <h2 class="page-title">About the Home</h2>
-            <h3 class="page-title-id">Tentang Penginapan</h3>
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Tentang Penginapan</h2>
+            <h3 class="page-title-id">About the Home</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Pendingin Ruangan</h3>
+                <div class="indo-text">
+                    <p>Remote control untuk unit AC terletak di meja gantung di bawah TV.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Remote controls for the AC units are located on the wall hanging table lower the TV.</p>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Air Mineral</h3>
+                <div class="indo-text">
+                    <p>Air mineral gratis tersedia di dapur.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Free Flow Mineral Water that you can find in the kitchen.</p>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Dapur</h3>
+                <div class="indo-text">
+                    <p>Dapur dilengkapi dengan kulkas, kompor, Anda dapat membuat makanan sederhana seperti Mie atau minuman seperti teh dan kopi.</p>
+                </div>
+                <div class="eng-text">
+                    <p>The kitchen is fully equipped with a refrigerator, stove, you can make simple food such as Noodles or beverages like tea and coffee.</p>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">TV & Hiburan</h3>
+                <div class="indo-text">
+                    <p>Nikmati Smart TV kami yang dilengkapi akses ke Netflix dan YouTube. Silakan menggunakan akun Anda sendiri untuk masuk. Ingat untuk keluar dari akun Anda sebelum melakukan check-out demi keamanan akun Anda.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Smart TV with Netflix and YouTube access. Please use your own account to log in and remember to log out before departure.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WiFi Information Page -->
+        <div class="content-page" id="wifi-info">
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Informasi WiFi</h2>
+            <h3 class="page-title-id">WiFi Information</h3>
             
             <div class="content-card">
                 <h3 class="card-title">WiFi</h3>
-                <h4 class="card-title-id">WiFi</h4>
-                <p>Network: Surabaya Homey</p>
-                <p>Password: greenhomey11</p>
-                
-                <p style="font-style: italic; margin-top: 8px;">Jaringan: Surabaya Homey</p>
-                <p style="font-style: italic;">Kata Sandi: greenhomey11</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Air Conditioning</h3>
-                <h4 class="card-title-id">Pendingin Ruangan</h4>
-                <p>Remote controls for the AC units are located on the wall hanging table lower the TV (meja gantung dibawah TV).</p>
-                <p style="font-style: italic; margin-top: 8px;">Remote control untuk unit AC terletak di meja gantung di bawah TV.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Mineral Water</h3>
-                <h4 class="card-title-id">Air Mineral</h4>
-                <p>Free Flow Mineral Water that you can find in the kitchen.</p>
-                <p style="font-style: italic; margin-top: 8px;">Air mineral gratis tersedia di dapur.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Kitchen</h3>
-                <h4 class="card-title-id">Dapur</h4>
-                <p>The kitchen is fully equipped with a refrigerator, stove, you can make simple food such as Noodles.</p>
-                <p style="font-style: italic; margin-top: 8px;">Dapur dilengkapi dengan kulkas, kompor, Anda dapat membuat makanan sederhana seperti Mie.</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">TV & Entertainment</h3>
-                <h4 class="card-title-id">TV & Hiburan</h4>
-                <p>Smart TV with Netflix and YouTube access. Please use your own account to log in and remember to log out before departure.</p>
-                <p style="font-style: italic; margin-top: 8px;">Smart TV dengan akses Netflix dan YouTube. Silakan gunakan akun Anda sendiri untuk masuk dan ingat untuk keluar sebelum check-out.</p>
+                <div class="indo-text">
+                    <p>Jaringan: Surabaya Homey</p>
+                    <p>Kata Sandi: greenhomey11</p>
+                </div>
+                <div class="eng-text">
+                    <p>Network: Surabaya Homey</p>
+                    <p>Password: greenhomey11</p>
+                </div>
             </div>
         </div>
         
         <!-- House Rules Page -->
         <div class="content-page" id="house-rules">
-            <div class="back-button">← Back to Menu</div>
-            <h2 class="page-title">House Rules</h2>
-            <h3 class="page-title-id">Peraturan Rumah</h3>
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Peraturan Rumah</h2>
+            <h3 class="page-title-id">House Rules</h3>
             
             <div class="content-card">
-                <h3 class="card-title">Important Rules</h3>
-                <h4 class="card-title-id">Peraturan Penting</h4>
-                <ul>
-                    <li>No smoking inside the Room / property - Smoking Room Only in Balcony</li>
-                    <li>No parties or events</li>
-                    <li>Quiet hours from 10:00 PM to 7:00 AM</li>
-                    <li>Please conserve water (we are supporting sustainability)</li>
-                </ul>
-                
-                <p style="font-style: italic; margin-top: 16px;">Peraturan Penting:</p>
-                <ul style="font-style: italic;">
-                    <li>Dilarang merokok di dalam Kamar / properti - Area merokok hanya di Balkon</li>
-                    <li>Dilarang mengadakan pesta atau acara</li>
-                    <li>Jam tenang dari 22:00 hingga 07:00</li>
-                    <li>Harap hemat air (kami mendukung keberlanjutan)</li>
-                </ul>
+                <h3 class="card-title">Peraturan Penting</h3>
+                <div class="indo-text">
+                    <ol>
+                        <li><strong>Dilarang Merokok di Dalam Kamar/Properti</strong> - Area merokok hanya tersedia di balkon.</li>
+                        <li><strong>Dilarang Mengadakan Pesta atau Acara</strong></li>
+                        <li><strong>Jam Tenang</strong> - Jam tenang dari pukul 22:00 hingga 07:00.</li>
+                        <li><strong>Harap Hemat Air</strong> - Kami mendukung keberlanjutan.</li>
+                    </ol>
+                </div>
+                <div class="eng-text">
+                    <ol>
+                        <li><strong>No Smoking Indoors</strong> - Smoking is allowed on the balcony only.</li>
+                        <li><strong>No Parties or Events Allowed</strong></li>
+                        <li><strong>Quiet Hours</strong> - Quiet hours are from 10:00 PM to 7:00 AM.</li>
+                        <li><strong>Please Conserve Water</strong> - We support sustainability.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Sampah & Daur Ulang</h3>
+                <div class="indo-text">
+                    <p>Harap buang semua sampah ke tempat sampah yang disediakan.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Please dispose of all trash in the bins provided.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Special Offer Page -->
+        <div class="content-page" id="special-offer">
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Penawaran Khusus</h2>
+            <h3 class="page-title-id">Special Offer</h3>
+            
+            <div class="content-card">
+                <div class="indo-text">
+                    <p><strong>Penawaran Khusus:</strong></p>
+                    <p>Sebagai ucapan terima kasih telah memberikan ulasan di Google Maps, nikmati satu botol minuman gratis, bisa teh, jus jeruk, atau air mineral. Cukup tunjukkan ulasan Anda yang telah diposting kepada resepsionis kami dan klaim minuman gratis Anda!</p>
+                </div>
+                <div class="eng-text">
+                    <p><strong>Special Offer:</strong></p>
+                    <p>Enjoy a free bottle of tea, orange juice, or mineral water as a thank you for leaving a review on Google Maps. Just show your posted review to our receptionist and claim your complimentary drink!</p>
+                </div>
             </div>
         </div>
         
         <!-- Activities Guide Page -->
         <div class="content-page" id="activities-guide">
-            <div class="back-button">← Back to Menu</div>
-            <h2 class="page-title">Surabaya Activities Guide</h2>
-            <h3 class="page-title-id">Panduan Aktivitas Surabaya</h3>
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Panduan Aktivitas Surabaya</h2>
+            <h3 class="page-title-id">Surabaya Activities Guide</h3>
             
             <div class="content-card">
-                <h3 class="card-title">Popular Attractions</h3>
-                <h4 class="card-title-id">Tempat Wisata Populer</h4>
-                <p><strong>Tugu Pahlawan (Heroes Monument)</strong> - 15 min drive</p>
-                <p>The 41-meter tall monument commemorates the Battle of Surabaya in 1945. Adjacent museum provides historical insight.</p>
-                
-                <p><strong>Submarine Monument (Monumen Kapal Selam)</strong> - 15 min drive</p>
-                <p>Explore inside a real submarine that served in the Indonesian Navy from 1962 to 1990.</p>
-                
-                <p style="font-style: italic; margin-top: 16px;"><strong>Tugu Pahlawan</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Monumen setinggi 41 meter yang memperingati Pertempuran Surabaya tahun 1945. Museum di sebelahnya memberikan wawasan sejarah.</p>
-                
-                <p style="font-style: italic;"><strong>Monumen Kapal Selam</strong> - 15 menit berkendara</p>
-                <p style="font-style: italic;">Jelajahi bagian dalam kapal selam asli yang bertugas di TNI AL dari tahun 1962 hingga 1990.</p>
+                <h3 class="card-title">Tempat Wisata Populer</h3>
+                <div class="indo-text">
+                    <p><strong>Tugu Pahlawan</strong> - 15 menit berkendara</p>
+                    <p>Monumen setinggi 41 meter yang memperingati Pertempuran Surabaya tahun 1945. Museum di sebelahnya memberikan wawasan sejarah.</p>
+                    
+                    <p><strong>Monumen Kapal Selam</strong> - 15 menit berkendara</p>
+                    <p>Jelajahi bagian dalam kapal selam asli yang bertugas di TNI AL dari tahun 1962 hingga 1990.</p>
+                </div>
+                <div class="eng-text">
+                    <p><strong>Tugu Pahlawan (Heroes Monument)</strong> - 15 min drive</p>
+                    <p>The 41-meter tall monument commemorates the Battle of Surabaya in 1945. Adjacent museum provides historical insight.</p>
+                    
+                    <p><strong>Submarine Monument (Monumen Kapal Selam)</strong> - 15 min drive</p>
+                    <p>Explore inside a real submarine that served in the Indonesian Navy from 1962 to 1990.</p>
+                </div>
             </div>
         </div>
         
         <!-- Food Guide Page -->
         <div class="content-page" id="food-guide">
-            <div class="back-button">← Back to Menu</div>
-            <h2 class="page-title">Surabaya Culinary Guide</h2>
-            <h3 class="page-title-id">Panduan Kuliner Surabaya</h3>
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Panduan Kuliner Surabaya</h2>
+            <h3 class="page-title-id">Surabaya Culinary Guide</h3>
             
             <div class="content-card">
-                <h3 class="card-title">Must-Try Local Dishes</h3>
-                <h4 class="card-title-id">Hidangan Lokal yang Wajib Dicoba</h4>
-                <p><strong>Rawon</strong> - Traditional black beef soup with unique nutmeg flavor</p>
-                <p><strong>Rujak Cingur</strong> - Mixed vegetables with beef nose, tofu, and petis sauce</p>
-                <p><strong>Lontong Balap</strong> - Rice cake with bean sprouts, tofu, and sweet soy sauce</p>
-                <p><strong>Semanggi Surabaya</strong> - Clover-shaped vegetable with sweet peanut sauce</p>
-                <p><strong>Tahu Tek</strong> - Fried tofu with rice cake, bean sprouts, and peanut sauce</p>
-                
-                <p style="font-style: italic; margin-top: 16px;"><strong>Rawon</strong> - Sup daging sapi hitam tradisional dengan rasa kluwek yang unik</p>
-                <p style="font-style: italic;"><strong>Rujak Cingur</strong> - Sayuran campur dengan hidung sapi, tahu, dan saus petis</p>
-                <p style="font-style: italic;"><strong>Lontong Balap</strong> - Lontong dengan taoge, tahu, dan kecap manis</p>
-                <p style="font-style: italic;"><strong>Semanggi Surabaya</strong> - Sayuran berbentuk semanggi dengan saus kacang manis</p>
-                <p style="font-style: italic;"><strong>Tahu Tek</strong> - Tahu goreng dengan lontong, taoge, dan saus kacang</p>
+                <h3 class="card-title">Hidangan Lokal yang Wajib Dicoba</h3>
+                <div class="indo-text">
+                    <ul>
+                        <li><strong>Rawon Kalkulator</strong>: Tempat makan yang berlokasi di Taman Bungkul ini terkenal dengan rawon gurihnya dan telah beroperasi selama 35 tahun, buka hingga dini hari.</li>
+                        <li><strong>Bebek Tugu Pahlawan</strong>: Dikenal dengan bebeknya yang empuk dan juicy, terletak dekat Tugu Pahlawan dan disarankan untuk datang sore hari karena biasanya ramai.</li>
+                        <li><strong>Bebek Goreng Sinjay</strong>: Menawarkan bebek goreng krispi namun tetap lembut, sudah memiliki beberapa cabang di Surabaya.</li>
+                        <li><strong>Sego Sambel Mak Yeye</strong>: Populer dengan sambal pedasnya, tempat ini cocok untuk pecinta pedas dan buka hingga pagi di Jagir Wonokromo.</li>
+                        <li><strong>Tahu Telor Pak Jayen</strong>: Lokasi di Dharmahusada, tempat ini terkenal dengan tahu telor lezatnya yang ramah di kantong, menjadi favorit banyak food vlogger.</li>
+                        <li><strong>Nasi Babat Kampung Malang</strong>: Menyajikan nasi babat empuk dengan sambal pedas di Kampung Malang, buka sampai tengah malam.</li>
+                        <li><strong>Nasi Babat Pegirian</strong>: Terkenal dengan nasi babat dan berbagai lauk, seperti cumi hitam dan usus, lokasinya di depan Hotel Kemadjoean, Ampel.</li>
+                        <li><strong>Nasi Pecel Rawon Pucang Moroseneng</strong>: Unik dengan kombinasi nasi pecel dan rawon, berada di Pucang Anom dan ramai pengunjung.</li>
+                        <li><strong>Penyetan Bang Ali</strong>: Menawarkan lauk seperti ayam dan ikan dengan tiga level sambal berbeda, memiliki cabang di Jalan Raya Kupang Indah dan Simpang Darmo yang buka 24 jam.</li>
+                        <li><strong>Depot Bu Rudy</strong>: Terkenal dengan sambalnya yang khas dan menu seperti sayur lodeh nangka, terletak di Dharmahusada, buka hingga malam.</li>
+                    </ul>
+                </div>
+                <div class="eng-text">
+                    <ul>
+                        <li><strong>Rawon Kalkulator</strong>: Located in Taman Bungkul, famous for its savory black beef soup and has been operating for 35 years, open until early morning.</li>
+                        <li><strong>Bebek Tugu Pahlawan</strong>: Known for tender and juicy duck, located near Tugu Pahlawan and recommended to come in the afternoon as it's usually crowded.</li>
+                        <li><strong>Bebek Goreng Sinjay</strong>: Offers crispy yet tender fried duck, has several branches in Surabaya.</li>
+                        <li><strong>Sego Sambel Mak Yeye</strong>: Popular for its spicy sambal, suitable for spicy food lovers and open until morning in Jagir Wonokromo.</li>
+                        <li><strong>Tahu Telor Pak Jayen</strong>: Located in Dharmahusada, famous for delicious and affordable fried tofu with eggs, a favorite among food vloggers.</li>
+                        <li><strong>Nasi Babat Kampung Malang</strong>: Serves tender tripe rice with spicy sambal in Kampung Malang, open until midnight.</li>
+                        <li><strong>Nasi Babat Pegirian</strong>: Famous for tripe rice and various side dishes like black squid and intestines, located in front of Hotel Kemadjoean, Ampel.</li>
+                        <li><strong>Nasi Pe<li><strong>Nasi Pecel Rawon Pucang Moroseneng</strong>: Unique with its combination of pecel rice and rawon, located in Pucang Anom and usually crowded.</li>
+                        <li><strong>Penyetan Bang Ali</strong>: Offers dishes like chicken and fish with three different levels of sambal, has branches on Jalan Raya Kupang Indah and Simpang Darmo that are open 24 hours.</li>
+                        <li><strong>Depot Bu Rudy</strong>: Famous for its signature sambal and dishes like jackfruit curry, located in Dharmahusada, open until evening.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Coffee Guide Page -->
+        <div class="content-page" id="coffee-guide">
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Panduan Kopi</h2>
+            <h3 class="page-title-id">Coffee Guide</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Kafe dan Tempat Kopi Rekomendasi</h3>
+                <div class="indo-text">
+                    <ul>
+                        <li><strong>Kapal Api Global Café</strong> - Kafe ini merupakan bagian dari merek kopi terkenal Indonesia, Kapal Api. Tempat ini sangat cocok untuk menikmati berbagai campuran kopi Indonesia asli dengan harga yang kompetitif.</li>
+                        <li><strong>Two Cents Coffee</strong> - Dikenal dengan suasana yang nyaman dan layanan yang excellent, Two Cents Coffee menawarkan berbagai minuman kopi dan makanan ringan. Tempat yang baik untuk pertemuan santai atau bekerja.</li>
+                        <li><strong>Monopole Coffee Lab</strong> - Sedikit lebih mewah, laboratorium kopi ini sempurna untuk para penggemar kopi yang ingin mencoba metode seduh yang berbeda dan biji kopi yang jarang. Harga cukup masuk akal mengingat kualitas dan pengalaman kopi yang ditawarkan.</li>
+                        <li><strong>Excelso Café</strong> - Terletak di beberapa tempat di Surabaya, termasuk Gubeng, Excelso menawarkan suasana yang nyaman untuk menikmati berbagai minuman kopi. Harganya terjangkau dan ideal untuk pertemuan atau belajar.</li>
+                        <li><strong>Janji Jiwa</strong> - Rantai kafe populer di Indonesia, dikenal dengan pilihan kopi yang terjangkau dan lezat. Tempat yang sering dikunjungi oleh kalangan muda dan menawarkan suasana yang santai.</li>
+                    </ul>
+                </div>
+                <div class="eng-text">
+                    <ul>
+                        <li><strong>Kapal Api Global Café</strong> - This café is part of the famous Indonesian coffee brand, Kapal Api. It's perfect for enjoying various authentic Indonesian coffee blends at competitive prices.</li>
+                        <li><strong>Two Cents Coffee</strong> - Known for its comfortable atmosphere and excellent service, Two Cents Coffee offers various coffee drinks and light meals. A nice place for casual meetings or work.</li>
+                        <li><strong>Monopole Coffee Lab</strong> - Slightly more upscale, this coffee laboratory is perfect for coffee enthusiasts who want to try different brewing methods and rare coffee beans. Price is quite reasonable considering the quality and coffee experience offered.</li>
+                        <li><strong>Excelso Café</strong> - Located in several places in Surabaya, including Gubeng, Excelso offers a comfortable atmosphere to enjoy various coffee drinks. Affordable and ideal for meetings or studying.</li>
+                        <li><strong>Janji Jiwa</strong> - Popular café chain in Indonesia, known for affordable and delicious coffee options. A place frequently visited by young people and offers a relaxed atmosphere.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Food Menu & Service Page -->
+        <div class="content-page" id="food-menu">
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Menu & Layanan</h2>
+            <h3 class="page-title-id">Food Menu & Service</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Menu Makanan & Minuman</h3>
+                <div class="indo-text">
+                    <p>Menu akan segera tersedia. Silakan hubungi resepsionis untuk informasi lebih lanjut.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Menu will be available soon. Please contact the receptionist for more information.</p>
+                </div>
             </div>
         </div>
         
         <!-- Checkout Information Page -->
         <div class="content-page" id="checkout-info">
-            <div class="back-button">← Back to Menu</div>
-            <h2 class="page-title">Check-out Instructions</h2>
-            <h3 class="page-title-id">Petunjuk Check-out</h3>
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Petunjuk Check-out</h2>
+            <h3 class="page-title-id">Check-out Instructions</h3>
             
             <div class="content-card">
-                <h3 class="card-title">Check-out Time</h3>
-                <h4 class="card-title-id">Waktu Check-out</h4>
-                <p>Check-out time is 12:00 AM.</p>
-                <p>Please leave the keys in the door.</p>
-                <p>Make sure all windows and doors are locked before departure.</p>
-                
-                <p style="font-style: italic; margin-top: 8px;">Waktu check-out adalah jam 12:00.</p>
-                <p style="font-style: italic;">Harap tinggalkan kunci di pintu.</p>
-                <p style="font-style: italic;">Pastikan semua jendela dan pintu terkunci sebelum keberangkatan.</p>
+                <h3 class="card-title">Waktu Check-out</h3>
+                <div class="indo-text">
+                    <p>Waktu check-out adalah jam 12:00.</p>
+                    <p>Harap tinggalkan kunci di pintu.</p>
+                    <p>Pastikan semua jendela dan pintu terkunci sebelum keberangkatan.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Check-out time is 12:00 PM.</p>
+                    <p>Please leave the keys in the door.</p>
+                    <p>Make sure all windows and doors are locked before departure.</p>
+                </div>
             </div>
             
             <div class="content-card">
-                <h3 class="card-title">Trash & Recycling</h3>
-                <h4 class="card-title-id">Sampah & Daur Ulang</h4>
-                <p>Please take all trash to the bins located at the side of the house.</p>
-                <p>Recycling (glass, paper, plastic) can be placed in the blue bins.</p>
-                
-                <p style="font-style: italic; margin-top: 8px;">Harap buang semua sampah ke tempat sampah yang terletak di samping rumah.</p>
-                <p style="font-style: italic;">Daur ulang (kaca, kertas, plastik) dapat ditempatkan di tempat sampah biru.</p>
+                <h3 class="card-title">Sampah & Daur Ulang</h3>
+                <div class="indo-text">
+                    <p>Harap buang semua sampah ke tempat sampah yang disediakan.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Please dispose of all trash in the bins provided.</p>
+                </div>
             </div>
             
             <div class="content-card">
-                <h3 class="card-title">Reviews & Feedback</h3>
-                <h4 class="card-title-id">Ulasan & Masukan</h4>
-                <p>We hope you enjoyed your stay! We would greatly appreciate if you could leave a review.</p>
-                <p>Any feedback to help us improve is always welcome.</p>
-                <p>We hope to welcome you back soon!</p>
-                
-                <p style="font-style: italic; margin-top: 8px;">Kami harap Anda menikmati menginap! Kami sangat menghargai jika Anda bisa meninggalkan ulasan.</p>
-                <p style="font-style: italic;">Setiap masukan untuk membantu kami meningkatkan layanan selalu diterima dengan senang hati.</p>
-                <p style="font-style: italic;">Kami berharap dapat menyambut Anda kembali segera!</p>
+                <h3 class="card-title">Ulasan & Masukan</h3>
+                <div class="indo-text">
+                    <p>Kami harap Anda menikmati menginap! Kami sangat menghargai jika Anda bisa meninggalkan ulasan.</p>
+                    <p>Setiap masukan untuk membantu kami meningkatkan layanan selalu diterima dengan senang hati.</p>
+                    <p>Kami berharap dapat menyambut Anda kembali segera!</p>
+                </div>
+                <div class="eng-text">
+                    <p>We hope you enjoyed your stay! We would greatly appreciate if you could leave a review.</p>
+                    <p>Any feedback to help us improve is always welcome.</p>
+                    <p>We hope to welcome you back soon!</p>
+                </div>
             </div>
         </div>
         
@@ -595,14 +754,14 @@
                 <div class="nav-icon">🏠</div>
                 <div>HOME</div>
             </div>
-            <div class="nav-item" id="info-nav">
-                <div class="nav-icon">ℹ️</div>
-                <div>INFO</div>
-            </div>
-            <div class="nav-item" id="map-nav">
+            <a href="https://wa.me/6281357009680" class="nav-item" id="wa-nav">
+                <div class="nav-icon">💬</div>
+                <div>WHATSAPP</div>
+            </a>
+            <a href="https://maps.app.goo.gl/XSNJxdNUYSBr8tFc8" class="nav-item" id="map-nav">
                 <div class="nav-icon">🗺️</div>
                 <div>MAP</div>
-            </div>
+            </a>
         </div>
     </div>
 
