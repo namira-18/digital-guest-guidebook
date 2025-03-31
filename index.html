@@ -294,6 +294,7 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
+            cursor: pointer;
         }
         
         .content-card {
@@ -338,59 +339,27 @@
             border-top: 1px dashed #ccc;
             padding-top: 10px;
         }
-        
-        /* New styles for enhanced content */
-        .city-gallery {
-            margin: 20px 0;
-            border-radius: var(--border-radius);
-            overflow: hidden;
+
+        /* Promo Banner */
+        .promo-banner {
+            background-color: #FFD700;
+            color: #333;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: var(--shadow);
         }
 
+        /* City Image */
         .city-image {
             width: 100%;
-            height: auto;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .promo-banner {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            color: white;
-            padding: 15px;
-            border-radius: var(--border-radius);
-            margin: 20px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .promo-banner::before {
-            content: "🔥";
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 20px;
-        }
-
-        .promo-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .menu-image-container {
-            text-align: center;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
             margin: 15px 0;
-        }
-
-        .menu-image {
-            max-width: 100%;
-            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-        }
-
-        .mt-3 {
-            margin-top: 15px;
         }
     </style>
 </head>
@@ -414,30 +383,6 @@
             </div>
         </div>
         
-        <!-- Home Page with Surabaya City -->
-        <div class="content-page" id="home-page">
-            <div class="back-button">← Kembali ke Menu</div>
-            <h2 class="page-title">Green Surabaya Homey</h2>
-            
-            <div class="promo-banner">
-                <div class="promo-title">PROMO SPESIAL!</div>
-                <p>Pesan langsung melalui WhatsApp dan dapatkan diskon 10%</p>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Selamat Datang di Surabaya!</h3>
-                <div class="city-gallery">
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/45/13/beautiful-view-of-surabaya.jpg?w=700&h=-1&s=1" alt="Surabaya City" class="city-image">
-                </div>
-                <div class="indo-text">
-                    <p>Green Surabaya Homey menawarkan akomodasi nyaman dengan harga terjangkau di pusat kota Surabaya.</p>
-                </div>
-                <div class="eng-text">
-                    <p>Green Surabaya Homey offers comfortable accommodation at affordable prices in the center of Surabaya.</p>
-                </div>
-            </div>
-        </div>
-        
         <!-- Menu Grid -->
         <div class="menu-section" id="menu" style="display: none;">
             <div class="menu-header">
@@ -449,6 +394,14 @@
                     <span>🌐</span>
                     <span>🏠</span>
                 </div>
+            </div>
+
+            <!-- Surabaya City Image -->
+            <img src="https://images.unsplash.com/photo-1557406322-a7f46b254d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Surabaya City" class="city-image">
+            
+            <!-- Promo Information -->
+            <div class="promo-banner">
+                PROMO! Diskon 10% untuk pemesanan 3 malam atau lebih!
             </div>
             
             <div class="menu-grid">
@@ -616,28 +569,6 @@
             </div>
         </div>
         
-        <!-- Food Menu & Service Page -->
-        <div class="content-page" id="food-menu">
-            <div class="back-button">← Kembali ke Menu</div>
-            <h2 class="page-title">Menu & Layanan</h2>
-            <h3 class="page-title-id">Food Menu & Service</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Menu Makanan & Minuman</h3>
-                <div class="indo-text">
-                    <p>Silakan lihat menu kami di bawah ini:</p>
-                    <div class="menu-image-container">
-                        <img src="food-menu.jpg" alt="Menu Makanan" class="menu-image">
-                    </div>
-                    <p class="mt-3">Untuk pemesanan, silakan hubungi resepsionis kami.</p>
-                </div>
-                <div class="eng-text">
-                    <p>Please see our menu below:</p>
-                    <p class="mt-3">For ordering, please contact our receptionist.</p>
-                </div>
-            </div>
-        </div>
-        
         <!-- House Rules Page -->
         <div class="content-page" id="house-rules">
             <div class="back-button">← Kembali ke Menu</div>
@@ -718,6 +649,27 @@
             </div>
         </div>
         
+        <!-- Food Menu & Service Page -->
+        <div class="content-page" id="food-menu">
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Menu & Layanan</h2>
+            <h3 class="page-title-id">Food Menu & Service</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Menu Makanan & Minuman</h3>
+                <div class="indo-text">
+                <p>Silakan lihat menu kami di bawah ini:</p>
+                <div class="menu-image-container">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Menu Makanan" class="city-image">
+                </div>
+                <p class="mt-3">Untuk pemesanan, silakan hubungi resepsionis kami.</p>
+            </div>
+            <div class="eng-text">
+                <p>Please see our menu below:</p>
+                <p class="mt-3">For ordering, please contact our receptionist.</p>
+            </div>
+            </div>
+        </div>
         
         <!-- Food Guide Page -->
         <div class="content-page" id="food-guide">
@@ -750,183 +702,6 @@
                         <li><strong>Tahu Telor Pak Jayen</strong>: Located in Dharmahusada, famous for delicious and affordable fried tofu with eggs, a favorite among food vloggers.</li>
                         <li><strong>Nasi Babat Kampung Malang</strong>: Serves tender tripe rice with spicy sambal in Kampung Malang, open until midnight.</li>
                         <li><strong>Nasi Babat Pegirian</strong>: Famous for tripe rice and various side dishes like black squid and intestines, located in front of Hotel Kemadjoean, Ampel.</li>
-                        <li><strong>Nasi Pe<li><strong>Nasi Pecel Rawon Pucang Moroseneng</strong>: Unique with its combination of pecel rice and rawon, located in Pucang Anom and usually crowded.</li>
+                        <li><strong>Nasi Pecel Rawon Pucang Moroseneng</strong>: Unique with its combination of pecel rice and rawon, located in Pucang Anom and usually crowded.</li>
                         <li><strong>Penyetan Bang Ali</strong>: Offers dishes like chicken and fish with three different levels of sambal, has branches on Jalan Raya Kupang Indah and Simpang Darmo that are open 24 hours.</li>
                         <li><strong>Depot Bu Rudy</strong>: Famous for its signature sambal and dishes like jackfruit curry, located in Dharmahusada, open until evening.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Coffee Guide Page -->
-        <div class="content-page" id="coffee-guide">
-            <div class="back-button">← Kembali ke Menu</div>
-            <h2 class="page-title">Panduan Kopi</h2>
-            <h3 class="page-title-id">Coffee Guide</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Kafe dan Tempat Kopi Rekomendasi</h3>
-                <div class="indo-text">
-                    <ul>
-                        <li><strong>Kapal Api Global Café</strong> - Kafe ini merupakan bagian dari merek kopi terkenal Indonesia, Kapal Api. Tempat ini sangat cocok untuk menikmati berbagai campuran kopi Indonesia asli dengan harga yang kompetitif.</li>
-                        <li><strong>Two Cents Coffee</strong> - Dikenal dengan suasana yang nyaman dan layanan yang excellent, Two Cents Coffee menawarkan berbagai minuman kopi dan makanan ringan. Tempat yang baik untuk pertemuan santai atau bekerja.</li>
-                        <li><strong>Monopole Coffee Lab</strong> - Sedikit lebih mewah, laboratorium kopi ini sempurna untuk para penggemar kopi yang ingin mencoba metode seduh yang berbeda dan biji kopi yang jarang. Harga cukup masuk akal mengingat kualitas dan pengalaman kopi yang ditawarkan.</li>
-                        <li><strong>Excelso Café</strong> - Terletak di beberapa tempat di Surabaya, termasuk Gubeng, Excelso menawarkan suasana yang nyaman untuk menikmati berbagai minuman kopi. Harganya terjangkau dan ideal untuk pertemuan atau belajar.</li>
-                        <li><strong>Janji Jiwa</strong> - Rantai kafe populer di Indonesia, dikenal dengan pilihan kopi yang terjangkau dan lezat. Tempat yang sering dikunjungi oleh kalangan muda dan menawarkan suasana yang santai.</li>
-                    </ul>
-                </div>
-                <div class="eng-text">
-                    <ul>
-                        <li><strong>Kapal Api Global Café</strong> - This café is part of the famous Indonesian coffee brand, Kapal Api. It's perfect for enjoying various authentic Indonesian coffee blends at competitive prices.</li>
-                        <li><strong>Two Cents Coffee</strong> - Known for its comfortable atmosphere and excellent service, Two Cents Coffee offers various coffee drinks and light meals. A nice place for casual meetings or work.</li>
-                        <li><strong>Monopole Coffee Lab</strong> - Slightly more upscale, this coffee laboratory is perfect for coffee enthusiasts who want to try different brewing methods and rare coffee beans. Price is quite reasonable considering the quality and coffee experience offered.</li>
-                        <li><strong>Excelso Café</strong> - Located in several places in Surabaya, including Gubeng, Excelso offers a comfortable atmosphere to enjoy various coffee drinks. Affordable and ideal for meetings or studying.</li>
-                        <li><strong>Janji Jiwa</strong> - Popular café chain in Indonesia, known for affordable and delicious coffee options. A place frequently visited by young people and offers a relaxed atmosphere.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Food Menu & Service Page -->
-        <div class="content-page" id="food-menu">
-            <div class="back-button">← Kembali ke Menu</div>
-            <h2 class="page-title">Menu & Layanan</h2>
-            <h3 class="page-title-id">Food Menu & Service</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Menu Makanan & Minuman</h3>
-                <div class="indo-text">
-                <p>Silakan lihat menu kami di bawah ini:</p>
-                <div class="menu-image-container">
-                    <img src="food-menu.jpg" alt="Menu Makanan" class="menu-image">
-                </div>
-                <p class="mt-3">Untuk pemesanan, silakan hubungi resepsionis kami.</p>
-            </div>
-            <div class="eng-text">
-                <p>Please see our menu below:</p>
-                <p class="mt-3">For ordering, please contact our receptionist.</p>
-            </div>
-        </div>
-        
-        <!-- Checkout Information Page -->
-        <div class="content-page" id="checkout-info">
-            <div class="back-button">← Kembali ke Menu</div>
-            <h2 class="page-title">Petunjuk Check-out</h2>
-            <h3 class="page-title-id">Check-out Instructions</h3>
-            
-            <div class="content-card">
-                <h3 class="card-title">Waktu Check-out</h3>
-                <div class="indo-text">
-                    <p>Waktu check-out adalah jam 12:00.</p>
-                    <p>Harap tinggalkan kunci di pintu.</p>
-                    <p>Pastikan semua jendela dan pintu terkunci sebelum keberangkatan.</p>
-                </div>
-                <div class="eng-text">
-                    <p>Check-out time is 12:00 PM.</p>
-                    <p>Please leave the keys in the door.</p>
-                    <p>Make sure all windows and doors are locked before departure.</p>
-                </div>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Sampah & Daur Ulang</h3>
-                <div class="indo-text">
-                    <p>Harap buang semua sampah ke tempat sampah yang disediakan.</p>
-                </div>
-                <div class="eng-text">
-                    <p>Please dispose of all trash in the bins provided.</p>
-                </div>
-            </div>
-            
-            <div class="content-card">
-                <h3 class="card-title">Ulasan & Masukan</h3>
-                <div class="indo-text">
-                    <p>Kami harap Anda menikmati menginap! Kami sangat menghargai jika Anda bisa meninggalkan ulasan.</p>
-                    <p>Setiap masukan untuk membantu kami meningkatkan layanan selalu diterima dengan senang hati.</p>
-                    <p>Kami berharap dapat menyambut Anda kembali segera!</p>
-                </div>
-                <div class="eng-text">
-                    <p>We hope you enjoyed your stay! We would greatly appreciate if you could leave a review.</p>
-                    <p>Any feedback to help us improve is always welcome.</p>
-                    <p>We hope to welcome you back soon!</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Navigation Bar -->
-        <div class="nav-bar">
-            <div class="nav-item active-nav" id="home-nav">
-                <div class="nav-icon">🏠</div>
-                <div>HOME</div>
-            </div>
-            <a href="https://wa.me/6281357009680" class="nav-item" id="wa-nav">
-                <div class="nav-icon">💬</div>
-                <div>WHATSAPP</div>
-            </a>
-            <a href="https://maps.app.goo.gl/XSNJxdNUYSBr8tFc8" class="nav-item" id="map-nav">
-                <div class="nav-icon">🗺️</div>
-                <div>MAP</div>
-            </a>
-        </div>
-    </div>
-
-    <script>
-        // Wait for DOM content to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get elements
-            const welcomeScreen = document.getElementById('welcome-screen');
-            const menuSection = document.getElementById('menu');
-            const getStartedBtn = document.getElementById('get-started');
-            const menuItems = document.querySelectorAll('.menu-item');
-            const backButtons = document.querySelectorAll('.back-button');
-            const contentPages = document.querySelectorAll('.content-page');
-            
-            // Get Started button click event
-            getStartedBtn.addEventListener('click', function() {
-                welcomeScreen.style.display = 'none';
-                menuSection.style.display = 'block';
-            });
-            
-            // Menu item click events
-            menuItems.forEach(function(item) {
-                item.addEventListener('click', function() {
-                    const pageId = this.getAttribute('data-page');
-                    menuSection.style.display = 'none';
-                    
-                    // Hide all content pages
-                    contentPages.forEach(function(page) {
-                        page.style.display = 'none';
-                    });
-                    
-                    // Show selected page
-                    document.getElementById(pageId).style.display = 'block';
-                });
-            });
-            
-            // Back button click events
-            backButtons.forEach(function(button) {
-                button.addEventListener('click', function() {
-                    // Hide all content pages
-                    contentPages.forEach(function(page) {
-                        page.style.display = 'none';
-                    });
-                    
-                    // Show menu
-                    menuSection.style.display = 'block';
-                });
-            });
-            
-            // Navigation bar functionality
-            document.getElementById('home-nav').addEventListener('click', function() {
-                contentPages.forEach(function(page) {
-                    page.style.display = 'none';
-                });
-                
-                if (menuSection.style.display === 'none') {
-                    menuSection.style.display = 'block';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
