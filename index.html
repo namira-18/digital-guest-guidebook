@@ -338,6 +338,60 @@
             border-top: 1px dashed #ccc;
             padding-top: 10px;
         }
+        
+        /* New styles for enhanced content */
+        .city-gallery {
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .city-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .promo-banner {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-banner::before {
+            content: "🔥";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+        }
+
+        .promo-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .menu-image-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .menu-image {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .mt-3 {
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -357,6 +411,30 @@
                 </div>
                 
                 <button class="get-started-btn" id="get-started">MULAI</button>
+            </div>
+        </div>
+        
+        <!-- Home Page with Surabaya City -->
+        <div class="content-page" id="home-page">
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Green Surabaya Homey</h2>
+            
+            <div class="promo-banner">
+                <div class="promo-title">PROMO SPESIAL!</div>
+                <p>Pesan langsung melalui WhatsApp dan dapatkan diskon 10%</p>
+            </div>
+            
+            <div class="content-card">
+                <h3 class="card-title">Selamat Datang di Surabaya!</h3>
+                <div class="city-gallery">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/45/13/beautiful-view-of-surabaya.jpg?w=700&h=-1&s=1" alt="Surabaya City" class="city-image">
+                </div>
+                <div class="indo-text">
+                    <p>Green Surabaya Homey menawarkan akomodasi nyaman dengan harga terjangkau di pusat kota Surabaya.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Green Surabaya Homey offers comfortable accommodation at affordable prices in the center of Surabaya.</p>
+                </div>
             </div>
         </div>
         
@@ -389,6 +467,11 @@
                     <div class="menu-label">Informasi WiFi</div>
                     <div class="menu-label-id">WiFi Information</div>
                 </div>
+                <div class="menu-item" data-page="food-menu">
+                    <div class="menu-icon">🍽️</div>
+                    <div class="menu-label">Menu & Layanan</div>
+                    <div class="menu-label-id">Food Menu & Service</div>
+                </div>
                 <div class="menu-item" data-page="house-rules">
                     <div class="menu-icon">📋</div>
                     <div class="menu-label">Peraturan Rumah</div>
@@ -413,11 +496,6 @@
                     <div class="menu-icon">☕</div>
                     <div class="menu-label">Panduan Kopi</div>
                     <div class="menu-label-id">Coffee Guide</div>
-                </div>
-                <div class="menu-item" data-page="food-menu">
-                    <div class="menu-icon">🍽️</div>
-                    <div class="menu-label">Menu & Layanan</div>
-                    <div class="menu-label-id">Food Menu & Service</div>
                 </div>
                 <div class="menu-item" data-page="checkout-info">
                     <div class="menu-icon">🔄</div>
@@ -538,6 +616,28 @@
             </div>
         </div>
         
+        <!-- Food Menu & Service Page -->
+        <div class="content-page" id="food-menu">
+            <div class="back-button">← Kembali ke Menu</div>
+            <h2 class="page-title">Menu & Layanan</h2>
+            <h3 class="page-title-id">Food Menu & Service</h3>
+            
+            <div class="content-card">
+                <h3 class="card-title">Menu Makanan & Minuman</h3>
+                <div class="indo-text">
+                    <p>Silakan lihat menu kami di bawah ini:</p>
+                    <div class="menu-image-container">
+                        <img src="food-menu.jpg" alt="Menu Makanan" class="menu-image">
+                    </div>
+                    <p class="mt-3">Untuk pemesanan, silakan hubungi resepsionis kami.</p>
+                </div>
+                <div class="eng-text">
+                    <p>Please see our menu below:</p>
+                    <p class="mt-3">For ordering, please contact our receptionist.</p>
+                </div>
+            </div>
+        </div>
+        
         <!-- House Rules Page -->
         <div class="content-page" id="house-rules">
             <div class="back-button">← Kembali ke Menu</div>
@@ -617,6 +717,7 @@
                 </div>
             </div>
         </div>
+        
         
         <!-- Food Guide Page -->
         <div class="content-page" id="food-guide">
