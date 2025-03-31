@@ -96,6 +96,7 @@
       margin-bottom: 40px;
       justify-content: center;
     }
+    /* Updated action button now opens WhatsApp chat */
     .action-button {
       width: 50px;
       height: 50px;
@@ -319,7 +320,9 @@
           Jl. Pucang Anom Timur II No.11, Kertajaya, Kec. Gubeng, Surabaya, Jawa Timur 60282
         </p>
         <div class="action-buttons">
-          <a href="tel:+6282144489313" class="action-button">📞</a>
+          <!-- Updated WhatsApp chat link with pre-filled message -->
+          <a href="https://wa.me/6282144489313?text=Hi%20kak%2C%20saya%20tamu%20dari%20Green%20Surabaya%20Homey%20ingin..." 
+             class="action-button" target="_blank">📞</a>
           <a href="mailto:surabayahomeyguesthouse@gmail.com" class="action-button">📩</a>
         </div>
         <a href="javascript:void(0);" onclick="showMenu();" class="get-started-btn">MULAI</a>
@@ -502,7 +505,6 @@
 
     <!-- Food Menu & Service Page -->
     <div class="content-page" id="food-menu">
-      <!-- Added onclick for back-button -->
       <div class="back-button" onclick="goBackToMenu()">← Kembali ke Menu</div>
       <h2 class="page-title">Menu & Layanan</h2>
       <h3 class="page-title-id">Food Menu & Service</h3>
@@ -710,9 +712,11 @@
         <div class="nav-icon">🏠</div>
         <div>HOME</div>
       </div>
-      <a href="tel:+6282144489313" class="nav-item" id="wa-nav">
+      <!-- Updated WhatsApp link in the nav bar -->
+      <a href="https://wa.me/6282144489313?text=Hi%20kak%2C%20saya%20tamu%20dari%20Green%20Surabaya%20Homey%20ingin..." 
+         class="nav-item" id="wa-nav" target="_blank">
         <div class="nav-icon">📞</div>
-        <div>CALL</div>
+        <div>WHATSAPP</div>
       </a>
       <a href="https://maps.app.goo.gl/XSNJxdNUYSBr8tFc8" class="nav-item" id="map-nav" target="_blank">
         <div class="nav-icon">🗺️</div>
